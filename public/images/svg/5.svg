@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="92.102" height="93" viewBox="0 0 92.102 93">
+  <defs fill="#000000">
+    <linearGradient id="linear-gradient" x1="0.561" y1="0.928" x2="0.907" y2="-0.053" gradientUnits="objectBoundingBox" fill="#000000">
+      <stop offset="0" stop-color="#ffa500" fill="#000000"/>
+      <stop offset="0.021" stop-color="#ffa500" fill="#000000"/>
+      <stop offset="0.167" stop-color="#ffa500" fill="#000000"/>
+      <stop offset="0.808" stop-color="#ffa500" fill="#000000"/>
+      <stop offset="1" stop-color="#ffa500" fill="#000000"/>
+    </linearGradient>
+    <filter id="Path_47164" x="16.777" y="26.113" width="59.434" height="46.822" filterUnits="userSpaceOnUse" fill="#000000">
+      <feOffset dy="4" input="SourceAlpha" fill="#000000"/>
+      <feGaussianBlur stdDeviation="2" result="blur" fill="#000000"/>
+      <feFlood flood-opacity="0.502" fill="#000000"/>
+      <feComposite operator="in" in2="blur" fill="#000000"/>
+      <feComposite in="SourceGraphic" fill="#000000"/>
+    </filter>
+    <filter id="Path_47165" x="0" y="0" width="92.102" height="93" filterUnits="userSpaceOnUse" fill="#000000">
+      <feOffset dy="4" input="SourceAlpha" fill="#000000"/>
+      <feGaussianBlur stdDeviation="2" result="blur-2" fill="#000000"/>
+      <feFlood flood-opacity="0.502" fill="#000000"/>
+      <feComposite operator="in" in2="blur-2" fill="#000000"/>
+      <feComposite in="SourceGraphic" fill="#000000"/>
+    </filter>
+  </defs>
+  <g id="Doing-the-right-thing" transform="translate(-2659.466 270.264)">
+    <g transform="matrix(1, 0, 0, 1, 2659.47, -270.26)" filter="url(#Path_47164)">
+      <path id="Path_47164-2" data-name="Path 47164" d="M2684.913-228.871l-1.966,1.679,16.279,19.114,29.744-31.594-1.884-1.772-27.765,29.49Z" transform="translate(-2659.47 270.26)" stroke="rgba(0,0,0,0)" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient)"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 2659.47, -270.26)" filter="url(#Path_47165)">
+      <path id="Path_47165-2" data-name="Path 47165" d="M2740.917-214.444a37.476,37.476,0,0,1-34.951,24.092,37.456,37.456,0,0,1-37.412-37.412,37.479,37.479,0,0,1,37.412-37.412,37.462,37.462,0,0,1,36.5,29.266l2.5-.651a40.056,40.056,0,0,0-39.008-31.2,40.072,40.072,0,0,0-40,40,40.045,40.045,0,0,0,40,40,40.071,40.071,0,0,0,37.4-25.819,2.878,2.878,0,0,1-.337.034A2.929,2.929,0,0,1,2740.917-214.444Z" transform="translate(-2659.47 270.26)" stroke="rgba(0,0,0,0)" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient)"/>
+    </g>
+    <circle id="Ellipse_717" data-name="Ellipse 717" cx="4" cy="4" r="4" transform="translate(2738.966 -220.764)" fill="#ffa500"/>
+  </g>
+</svg>
