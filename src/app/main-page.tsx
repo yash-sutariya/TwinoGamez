@@ -6,9 +6,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../css/landing.css";
-import "../css/7a27f.css";
 import Header from "./header/Header";
 import Footer from "./footer/Footer";
+import Image from "next/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -373,32 +373,105 @@ export default function Home() {
     // },
   ];
 
+  const smallPosts = [
+    {
+      title: "Help Vikings in love affairs!",
+      link: "https://www.tiguandesign.com/gameleon/dark/help-vikings-in-love-affairs/",
+      image:
+        "/images/games/https___apptrigger.com_files_2020_10_Gears-5-302x180.jpg",
+    },
+    {
+      title: "Our friends are coming back again!",
+      link: "https://www.tiguandesign.com/gameleon/dark/our-friends-are-coming-back-again/",
+      image: "/images/games/outridersutsettestil_3280183b-302x180.jpg",
+    },
+    {
+      title: "A great theme for your gaming site",
+      link: "https://www.tiguandesign.com/gameleon/dark/a-great-theme-for-your-gaming-site/",
+      image: "/images/games/The-Ascent-Keyart-LANDSCAPE-Logo-302x180.jpg",
+    },
+    {
+      title: "I can take you as far as Anchorhead",
+      link: "https://www.tiguandesign.com/gameleon/dark/i-can-take-you-as-far-as-anchorhead/",
+      image:
+        "/images/games/11551431038icp1zq8vwyilktwlu2cizwmzgrlscovzt98mmdhbtvhchclsdiq7z6yiiwiimlwt6luk7auwpbt8bicin-3-610x349.jpg",
+    },
+  ];
+
+  const highlights = [
+    {
+      title: "Fortnite Food Truck Locations",
+      category: "Arcade",
+      image:
+        "/images/games/11551431038icp1zq8vwyilktwlu2cizwmzgrlscovzt98mmdhbtvhchclsdiq7z6yiiwiimlwt6luk7auwpbt8bicin-3-610x349.jpg",
+      link: "https://www.tiguandesign.com/gameleon/dark/fortnite-food-truck-locations/",
+    },
+    {
+      title: "The Ability to Destroy a Car",
+      category: "Arcade",
+      image:
+        "/images/games/11551431038icp1zq8vwyilktwlu2cizwmzgrlscovzt98mmdhbtvhchclsdiq7z6yiiwiimlwt6luk7auwpbt8bicin-3-610x349.jpg",
+      link: "https://www.tiguandesign.com/gameleon/dark/the-ability-to-destroy-a-car/",
+    },
+    {
+      title: "A Rune 2 Patch is Finally Coming Now",
+      category: "Arcade",
+      image:
+        "/images/games/11551431038icp1zq8vwyilktwlu2cizwmzgrlscovzt98mmdhbtvhchclsdiq7z6yiiwiimlwt6luk7auwpbt8bicin-3-610x349.jpg",
+      link: "https://www.tiguandesign.com/gameleon/dark/a-rune-2-patch-is-finally-coming-now/",
+    },
+    {
+      title: "Epic’s Weekly Free Games",
+      category: "Arcade",
+      image:
+        "/images/games/11551431038icp1zq8vwyilktwlu2cizwmzgrlscovzt98mmdhbtvhchclsdiq7z6yiiwiimlwt6luk7auwpbt8bicin-3-610x349.jpg",
+      link: "https://www.tiguandesign.com/gameleon/dark/epics-weekly-free-games/",
+    },
+  ];
+
+  const posts = [
+  {
+    title: "The New Pop Culture Optimism",
+    date: "Feb 15, 2021",
+    image: "/images/games/blog-g-30-610x349.jpg",
+    link: "#",
+  },
+  {
+    title: "Game of the Year 2021",
+    date: "Oct 14, 2020",
+    image: "/images/games/Fortnite_blog_e3-2019_E32019_Booth_Announce_Social_BlogHeader-1920x1080-aab86610daa3a8a93be7e42859b793ef0fffb2e1-302x180.jpg",
+    link: "#",
+  },
+  {
+    title: "My Favorite Hotel Game",
+    date: "Oct 14, 2020",
+    image: "/images/games/blog-g-30-610x349.jpg",
+    link: "#",
+  },
+  {
+    title: "One Side of This Galaxy",
+    date: "Oct 14, 2020",
+    image: "/images/games/Fortnite_blog_e3-2019_E32019_Booth_Announce_Social_BlogHeader-1920x1080-aab86610daa3a8a93be7e42859b793ef0fffb2e1-302x180.jpg",
+    link: "#",
+  },
+  {
+    title: "May the Force Be With You",
+    date: "Jul 14, 2020",
+    image: "/images/games/blog-g-30-610x349.jpg",
+    link: "#",
+  },
+  {
+    title: "Doom Eternal Has a New Trailer",
+    date: "Jun 25, 2020",
+    image: "/images/games/Fortnite_blog_e3-2019_E32019_Booth_Announce_Social_BlogHeader-1920x1080-aab86610daa3a8a93be7e42859b793ef0fffb2e1-302x180.jpg",
+    link: "#",
+  },
+];
+
+
   return (
     <>
       <Header />
-      <section>
-        <div className="container-fluid px-0">
-          <div className="d-none d-md-block">
-            <a href="https://calendly.com/gomziconsultingservices">
-              <img
-                src="/images/gcs/new-offer.png"
-                className="img-fluid"
-                alt="offer"
-              />
-            </a>
-          </div>
-          <div className="d-block d-md-none">
-            <a href="https://calendly.com/gomziconsultingservices">
-              <img
-                src="/images/gcs/new-mobile-offer.jpg"
-                className="img-fluid"
-                alt="offer"
-              />
-            </a>
-          </div>
-        </div>
-      </section>
-
       <section className="margintop">
         <div className="td-right-wrap">
           <div className="td-right-icons">
@@ -434,7 +507,7 @@ export default function Home() {
           </div>
         </div>
         <div id="top-bar" className="top-bar-class">
-          <div className="container">
+          <div className="container ">
             <div id="wrapper-menu" className="td-sticky">
               <div className="td-wrapper-box">
                 <div className="td-shadow">
@@ -449,18 +522,6 @@ export default function Home() {
                             <i className="fa fa-home"></i>
                             <span className="fontawesome-text"> Home</span>
                           </a>
-                          <ul className="sub-menu">
-                            <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-682">
-                              <a href="https://www.tiguandesign.com/gameleon/arcade/">
-                                Light Version
-                              </a>
-                            </li>
-                            <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-683">
-                              <a href="https://www.tiguandesign.com/gameleon/magazine/">
-                                Magazine
-                              </a>
-                            </li>
-                          </ul>
                         </li>
                         <li className="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-286">
                           <a href="https://www.tiguandesign.com/gameleon/dark/category/arcade/">
@@ -495,18 +556,6 @@ export default function Home() {
                               Game Format
                             </span>
                           </a>
-                          <ul className="sub-menu">
-                            <li className="menu-item menu-item-type-post_type menu-item-object-post menu-item-477">
-                              <a href="https://www.tiguandesign.com/gameleon/dark/the-ability-to-destroy-a-car/">
-                                Landscape Game
-                              </a>
-                            </li>
-                            <li className="menu-item menu-item-type-post_type menu-item-object-post menu-item-478">
-                              <a href="https://www.tiguandesign.com/gameleon/dark/cut-the-rope-html-5-game/">
-                                Portrait Game
-                              </a>
-                            </li>
-                          </ul>
                         </li>
                       </ul>
                     </nav>
@@ -521,31 +570,6 @@ export default function Home() {
                       </div>
                       <i className="fas fa-search"></i>
                     </div>
-
-                    <div className="td-expand">
-                      <form
-                        role="search"
-                        method="get"
-                        className="td-search-form"
-                        action="https://www.tiguandesign.com/gameleon/dark/"
-                      >
-                        <div className="menu-search-form-wrap">
-                          <input
-                            id="td-header-search"
-                            placeholder="search"
-                            type="text"
-                            value=""
-                            name="s"
-                          />
-                          <input
-                            className="td-search-button button"
-                            type="submit"
-                            id="td-search-main-menu"
-                            value="search"
-                          />
-                        </div>
-                      </form>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -554,134 +578,160 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="margintop">
-        <div className="container-fluid pb-3 pb-md-5">
-          <div className="container">
-            <div className="title-side">
-              <h2>Our Services</h2>
+      <div
+        id="td-modular-slider"
+        className="flex flex-col md:flex-row flex-wrap mt-4"
+      >
+        {/* Main Slide */}
+        <div className="relative w-full h-[220px] md:w-[610px] md:h-[349px] overflow-hidden">
+          <Link href="https://www.tiguandesign.com/gameleon/dark/mirrors-edge-refines-the-game/">
+            <div className="relative w-full h-full">
+              <Image
+                src="/images/games/6-610x420.png"
+                alt="Mirror’s Edge"
+                layout="fill"
+                objectFit="cover"
+                className="z-0"
+              />
+              <div className="absolute inset-0 bg-black/10 z-10" />
+              <div className="absolute bottom-4 left-4 z-20 text-white">
+                <h1 className="text-lg md:text-xl font-bold uppercase">
+                  Mirror’s Edge refines the game
+                </h1>
+              </div>
             </div>
-            <div>
-              <Slider {...settings3}>
-                <div>
-                  <div className="main-round">
-                    <a href="javascript:void(0);">
-                      <div className="small-round">
-                        <img
-                          src="/images/gcs/Business-Management.webp"
-                          alt="Business Management"
-                          className="lazy"
-                          width="100%"
-                        />
-                      </div>
-                    </a>
-                  </div>
-                  <div className="services-text mt-2">
-                    <a href="javascript:void(0);">Business Management</a>
-                  </div>
-                </div>
-                <div>
-                  <div className="main-round">
-                    <a href="javascript:void(0);">
-                      <div className="small-round">
-                        <img
-                          src="/images/gcs/IT Services.webp"
-                          alt="IT Services"
-                          className="lazy"
-                          width="100%"
-                        />
-                      </div>
-                    </a>
-                  </div>
-                  <div className="services-text mt-2">
-                    <a href="javascript:void(0);">
-                      <span>IT Services</span>
-                    </a>
+          </Link>
+        </div>
+
+        {/* Small Cards Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-2 w-full md:w-[448px] h-auto md:h-[349px] gap-0">
+          {smallPosts.map((post) => (
+            <div
+              key={post.title}
+              className="relative w-full h-[160px] md:w-[224px] md:h-[174px]"
+            >
+              <Link href={post.link}>
+                <div className="relative w-full h-full">
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    layout="fill"
+                    objectFit="cover"
+                    className="z-0"
+                  />
+                  <div className="absolute inset-0 bg-black/5 z-10" />
+                  <div className="absolute bottom-2 left-2 z-20 text-white">
+                    <h2 className="text-xs md:text-sm font-semibold leading-tight uppercase">
+                      {post.title}
+                    </h2>
                   </div>
                 </div>
-                <div>
-                  <div className="main-round">
-                    <a href="javascript:void(0);">
-                      <div className="small-round">
-                        <img
-                          src="/images/gcs/Marketing-Services.webp"
-                          alt="Marketing Services"
-                          className="lazy"
-                          width="100%"
-                        />
-                      </div>
-                    </a>
-                  </div>
-                  <div className="services-text mt-2">
-                    <a href="javascript:void(0);">Marketing Services</a>
-                  </div>
-                </div>
-                <div>
-                  <div className="main-round">
-                    <a href="javascript:void(0);">
-                      <div className="small-round">
-                        <img
-                          src="/images/gcs/digital-soultaion.png"
-                          alt="Digital Marketing"
-                          className="lazy"
-                          width="100%"
-                        />
-                      </div>
-                    </a>
-                  </div>
-                  <div className="services-text mt-2">
-                    <a href="javascript:void(0);">Digital Solutions</a>
-                  </div>
-                </div>
-                <div>
-                  <div className="main-round">
-                    <a href="javascript:void(0);">
-                      <div className="small-round">
-                        <img
-                          src="/images/gcs/AtoZ.webp"
-                          alt="Finance Management"
-                          className="lazy"
-                          width="100%"
-                        />
-                      </div>
-                    </a>
-                  </div>
-                  <div className="services-text mt-2">
-                    <a href="javascript:void(0);">Finance Management</a>
-                  </div>
-                </div>
-                <div>
-                  <div className="main-round">
-                    <a href="javascript:void(0);">
-                      <div className="small-round">
-                        <img
-                          src="/images/gcs/learning-academy.webp"
-                          alt="Learning Academy"
-                          className="lazy"
-                        />
-                      </div>
-                    </a>
-                  </div>
-                  <div className="services-text mt-2">
-                    <a href="javascript:void(0);">Learning Academy</a>
-                  </div>
-                </div>
-              </Slider>
+              </Link>
             </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="text-white py-6">
+        <div className="container mx-auto px-4">
+          {/* Header */}
+          <div className="flex justify-between items-center mb-6">
+            <h3 className="text-xl font-bold">
+              <Link href="https://www.tiguandesign.com/gameleon/dark/category/arcade/">
+                <span className="text-white">Today Highlights</span>
+              </Link>
+              <span className="text-red-500 ml-2">top</span>
+            </h3>
+            <Link href="https://www.tiguandesign.com/gameleon/dark/category/arcade/">
+              <div className="bg-red-600 text-white px-3 py-1 text-xs cursor-pointer font-semibold uppercase">
+                view all
+              </div>
+            </Link>
+          </div>
+
+          {/* Grid of Highlight Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {highlights.map((item) => (
+              <div key={item.title} className="relative group overflow-hidden">
+                <Link href={item.link}>
+                  <div className="relative w-full h-[220px] sm:h-[200px] md:h-[240px]">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      layout="fill"
+                      objectFit="cover"
+                      className="transition-transform duration-300 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+                    <div className="absolute bottom-4 left-4 z-10">
+                      <p className="text-xm  font-semibold text-white uppercase">
+                        {item.category}
+                      </p>
+                      <h2 className="text-base sm:text-lg font-bold uppercase text-white leading-tight">
+                        {item.title}
+                      </h2>
+                    </div>
+                    <div className="absolute bottom-4 right-4 z-10">
+                      <button className="bg-white text-black text-sm px-3 py-1 flex items-center gap-1 font-bold uppercase">
+                        Play <span className="text-xs">&#9654;</span>
+                      </button>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
-      </section>
+      </div>
 
-      <section className="margintop">
-        <div className="container">
-          <a
-            href=" https://api.whatsapp.com/send?phone=6354051487&text=Hello I want to know more about GCS
-        Consulting service"
-            className="gcs-button btn landing-btn mt-1 w-100"
-          >
-            Get Free 1:1 Consultation
-          </a>
+      <div className="text-white py-10">
+        <div className="container mx-auto px-4">
+          {/* Header */}
+          <div className="flex justify-between items-center mb-8">
+            <h3 className="text-2xl font-bold flex items-center">
+              <a href="https://www.tiguandesign.com/gameleon/dark/category/defense/" className="text-white">
+                Popular
+              </a>
+              <span className="ml-2 text-red-500 uppercase font-semibold">
+                HOT
+              </span>
+            </h3>
+            <a
+              href="https://www.tiguandesign.com/gameleon/dark/category/defense/"
+              className="bg-red-600 hover:bg-red-700 text-white text-xs px-4 py-2 uppercase font-bold"
+            >
+              View All
+            </a>
+          </div>
+
+          {/* Cards Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {posts.map((post, index) => (
+              <div
+                key={index}
+                className="bg-gray-900 rounded overflow-hidden shadow-md"
+              >
+                <a href={post.link}>
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-48 object-cover"
+                  />
+                </a>
+                <div className="p-4">
+                  <h2 className="text-lg font-semibold mb-1 hover:text-red-400 transition duration-200">
+                    <a href={post.link} className="text-white">{post.title}</a>
+                  </h2>
+                  <p className="text-sm" style={{color:'#f63a3a'}}>
+                    {post.date}
+                    <span className="text-gray-400 ml-2">- No Comments</span>
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-      </section>
+      </div>
 
       <section className="margintop">
         <div className="container-fluid pt-5 pt-md-0">

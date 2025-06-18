@@ -72,7 +72,7 @@
   top: 0;
   position: absolute;
   background-color: #00a9b0;
-  background-image: url(../images/stripes.png);
+  background-image: url(../../public/images/games/stripes.png);
   display: block;
   height: 34px;
 }
@@ -196,17 +196,17 @@ span.post-small-rate span {
 
 span.stars-small,
 span.stars-small span {
-  background-image: url(../images/stars-small.png);
+  background-image: url(../../public/images/games/stars-small.png);
 }
 
 span.hearts-small,
 span.hearts-small span {
-  background-image: url(../images/hearts-small.png);
+  background-image: url(../../public/images/games/hearts-small.png);
 }
 
 span.thumbs-small,
 span.thumbs-small span {
-  background-image: url(../images/thumbs-small.png);
+  background-image: url(../../public/images/games/thumbs-small.png);
 }
 
 span.post-large-rate {
@@ -228,17 +228,17 @@ span.post-large-rate span {
 
 span.stars-large,
 span.stars-large span {
-  background-image: url(../images/stars-large.png);
+  background-image: url(../../public/images/games/stars-large.png);
 }
 
 span.hearts-large,
 span.hearts-large span {
-  background-image: url(../images/hearts-large.png);
+  background-image: url(../../public/images/games/hearts-large.png);
 }
 
 span.thumbs-large,
 span.thumbs-large span {
-  background-image: url(../images/thumbs-large.png);
+  background-image: url(../../public/images/games/thumbs-large.png);
 }
 
 .post-single-rate {
@@ -285,7 +285,7 @@ ul.reviews-posts h3 {
 }
 
 .taq-load {
-  background: url(../images/ajax-loader.gif) no-repeat center;
+  background: url(../../public/images/games/ajax-loader.gif) no-repeat center;
   width: 98px;
   height: 22px;
   display: block;
@@ -3248,13 +3248,13 @@ form.nd_form ul.messages li {
 form.nd_form ul.messages li {
   color: #4f8a10;
   background-color: #dff2bf;
-  background-image: url(/gameleon/dark/wp-content/themes/gameleon/assets/img/success.png);
+  /* background-image: url(/gameleon/dark/wp-content/themes/gameleon/assets/img/success.png); */
 }
 
 form.nd_form ul.errors li {
   color: #9d7b11;
   background-color: #ffe69c;
-  background-image: url(/gameleon/dark/wp-content/themes/gameleon/assets/img/errors.png);
+  /* background-image: url(/gameleon/dark/wp-content/themes/gameleon/assets/img/errors.png); */
 }
 
 div.nd_logged_in,
@@ -3741,7 +3741,7 @@ h5.toggle {
 }
 
 h5.toggle a {
-  background: url(../images/toggle-open.png) no-repeat left center;
+  background: url(../../public/images/games/toggle-open.png) no-repeat left center;
   text-decoration: none;
   padding-left: 20px;
   font-size: 18px;
@@ -3751,7 +3751,7 @@ h5.toggle a {
 }
 
 h5.toggle.active a {
-  background: url(../images/toggle-close.png) no-repeat left center;
+  background: url(../../public/images/games/toggle-close.png) no-repeat left center;
   text-decoration: none;
   padding-left: 20px;
   color: #fff;
@@ -4814,7 +4814,7 @@ img.wp-post-image {
 }
 
 .td-friv.grid-image img {
-  cursor: url(../images/cursor.png), pointer;
+  cursor: url(../../public/images/games/cursor.png), pointer;
   -moz-transition: all 0.3s ease 0s;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
@@ -5487,7 +5487,7 @@ img.wp-post-image {
 
 .owl-item.loading {
   min-height: 150px;
-  background: url(../images/AjaxLoader.gif) no-repeat center center;
+  background: url(../../public/images/games/AjaxLoader.gif) no-repeat center center;
 }
 
 .owl-theme-2 .owl-controls {
