@@ -1,6 +1,5 @@
 // eslint-disable-next-line @next/next/no-img-element
 "use client";
-
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -42,6 +41,7 @@ export default function Home() {
   const [mobile, setPhoneNumber] = useState("");
   const [message, setMessage] = useState("");
   const [source, setSource] = useState("");
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleApplyForInquiry = async (e: any) => {
     e.preventDefault();
@@ -373,7 +373,7 @@ export default function Home() {
     // },
   ];
 
-  const smallPosts = [
+  const games = [
     {
       title: "Help Vikings in love affairs!",
       link: "https://www.tiguandesign.com/gameleon/dark/help-vikings-in-love-affairs/",
@@ -403,7 +403,7 @@ export default function Home() {
       title: "Fortnite Food Truck Locations",
       category: "Arcade",
       image:
-        "/images/games/11551431038icp1zq8vwyilktwlu2cizwmzgrlscovzt98mmdhbtvhchclsdiq7z6yiiwiimlwt6luk7auwpbt8bicin-3-610x349.jpg",
+        "/images/games/Fortnite_untitled-page_10StW_Evergreens_Red_NewsHeader-1920x1080-6d3fdd4fdabd9e97336bdd012776eb05f5e91ce9-302x180.jpg",
       link: "https://www.tiguandesign.com/gameleon/dark/fortnite-food-truck-locations/",
     },
     {
@@ -430,48 +430,117 @@ export default function Home() {
   ];
 
   const posts = [
-  {
-    title: "The New Pop Culture Optimism",
-    date: "Feb 15, 2021",
-    image: "/images/games/blog-g-30-610x349.jpg",
-    link: "#",
-  },
-  {
-    title: "Game of the Year 2021",
-    date: "Oct 14, 2020",
-    image: "/images/games/Fortnite_blog_e3-2019_E32019_Booth_Announce_Social_BlogHeader-1920x1080-aab86610daa3a8a93be7e42859b793ef0fffb2e1-302x180.jpg",
-    link: "#",
-  },
-  {
-    title: "My Favorite Hotel Game",
-    date: "Oct 14, 2020",
-    image: "/images/games/blog-g-30-610x349.jpg",
-    link: "#",
-  },
-  {
-    title: "One Side of This Galaxy",
-    date: "Oct 14, 2020",
-    image: "/images/games/Fortnite_blog_e3-2019_E32019_Booth_Announce_Social_BlogHeader-1920x1080-aab86610daa3a8a93be7e42859b793ef0fffb2e1-302x180.jpg",
-    link: "#",
-  },
-  {
-    title: "May the Force Be With You",
-    date: "Jul 14, 2020",
-    image: "/images/games/blog-g-30-610x349.jpg",
-    link: "#",
-  },
-  {
-    title: "Doom Eternal Has a New Trailer",
-    date: "Jun 25, 2020",
-    image: "/images/games/Fortnite_blog_e3-2019_E32019_Booth_Announce_Social_BlogHeader-1920x1080-aab86610daa3a8a93be7e42859b793ef0fffb2e1-302x180.jpg",
-    link: "#",
-  },
-];
+    {
+      title: "The New Pop Culture Optimism",
+      date: "Feb 15, 2021",
+      image: "/images/games/blog-g-30-610x349.jpg",
+      link: "#",
+    },
+    {
+      title: "Game of the Year 2021",
+      date: "Oct 14, 2020",
+      image:
+        "/images/games/Fortnite_blog_e3-2019_E32019_Booth_Announce_Social_BlogHeader-1920x1080-aab86610daa3a8a93be7e42859b793ef0fffb2e1-302x180.jpg",
+      link: "#",
+    },
+    {
+      title: "My Favorite Hotel Game",
+      date: "Oct 14, 2020",
+      image: "/images/games/blog-g-30-610x349.jpg",
+      link: "#",
+    },
+    {
+      title: "One Side of This Galaxy",
+      date: "Oct 14, 2020",
+      image:
+        "/images/games/Fortnite_blog_e3-2019_E32019_Booth_Announce_Social_BlogHeader-1920x1080-aab86610daa3a8a93be7e42859b793ef0fffb2e1-302x180.jpg",
+      link: "#",
+    },
+    {
+      title: "May the Force Be With You",
+      date: "Jul 14, 2020",
+      image: "/images/games/blog-g-30-610x349.jpg",
+      link: "#",
+    },
+    {
+      title: "Doom Eternal Has a New Trailer",
+      date: "Jun 25, 2020",
+      image:
+        "/images/games/Fortnite_blog_e3-2019_E32019_Booth_Announce_Social_BlogHeader-1920x1080-aab86610daa3a8a93be7e42859b793ef0fffb2e1-302x180.jpg",
+      link: "#",
+    },
+  ];
 
+  const WeeklyGames = [
+    "/images/games/fortnite-tease-1222x640-1-150x150.png",
+    "/images/games/fortnite-tease-1222x640-1-150x150.png",
+    "/images/games/fortnite-tease-1222x640-1-150x150.png",
+    "/images/games/fortnite-tease-1222x640-1-150x150.png",
+    "/images/games/fortnite-tease-1222x640-1-150x150.png",
+    "/images/games/fortnite-tease-1222x640-1-150x150.png",
+    "/images/games/fortnite-tease-1222x640-1-150x150.png",
+    "/images/games/fortnite-tease-1222x640-1-150x150.png",
+    "/images/games/fortnite-tease-1222x640-1-150x150.png",
+    "/images/games/fortnite-tease-1222x640-1-150x150.png",
+    "/images/games/fortnite-tease-1222x640-1-150x150.png",
+    "/images/games/fortnite-tease-1222x640-1-150x150.png",
+    "/images/games/fortnite-tease-1222x640-1-150x150.png",
+    "/images/games/fortnite-tease-1222x640-1-150x150.png",
+    "/images/games/fortnite-tease-1222x640-1-150x150.png",
+    "/images/games/fortnite-tease-1222x640-1-150x150.png",
+    "/images/games/fortnite-tease-1222x640-1-150x150.png",
+    "/images/games/fortnite-tease-1222x640-1-150x150.png",
+    "/images/games/fortnite-tease-1222x640-1-150x150.png",
+    "/images/games/fortnite-tease-1222x640-1-150x150.png",
+    "/images/games/fortnite-tease-1222x640-1-150x150.png",
+    "/images/games/fortnite-tease-1222x640-1-150x150.png",
+    "/images/games/fortnite-tease-1222x640-1-150x150.png",
+    "/images/games/fortnite-tease-1222x640-1-150x150.png",
+    "/images/games/fortnite-tease-1222x640-1-150x150.png",
+    "/images/games/fortnite-tease-1222x640-1-150x150.png",
+
+    // Add all your image paths here...
+  ];
+
+  // footer
+
+  const tags = [
+    "ARCADE",
+    "HTML5",
+    "CARS",
+    "AVENTURE",
+    "RACING",
+    "WORDPRESS",
+    "GIRLS",
+    "GAMES",
+  ];
+
+  const RecentPosts = [
+    {
+      title: "New Battlefield Season Starts Soon",
+      date: "Feb 25, 2021",
+      plays: 4971,
+    },
+    {
+      title: "Our Highest Review Scores of 2020",
+      date: "Feb 25, 2021",
+      plays: 4976,
+    },
+    {
+      title: "This Game will Keep You up All Night",
+      date: "Feb 25, 2021",
+      plays: 4996,
+    },
+  ];
 
   return (
     <>
       <Header />
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      />
+
       <section className="margintop">
         <div className="td-right-wrap">
           <div className="td-right-icons">
@@ -506,142 +575,238 @@ export default function Home() {
             </ul>
           </div>
         </div>
-        <div id="top-bar" className="top-bar-class">
-          <div className="container ">
-            <div id="wrapper-menu" className="td-sticky">
-              <div className="td-wrapper-box">
-                <div className="td-shadow">
-                  <div id="top-navigation">
-                    <nav className="navigation">
-                      <ul id="menu-main-menu-1" className="menu">
-                        <li className="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-has-children menu-item-353">
-                          <a
-                            href="http://www.tiguandesign.com/gameleon/dark/"
-                            aria-current="page"
-                          >
-                            <i className="fa fa-home"></i>
-                            <span className="fontawesome-text"> Home</span>
-                          </a>
-                        </li>
-                        <li className="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-286">
-                          <a href="https://www.tiguandesign.com/gameleon/dark/category/arcade/">
-                            <i className="fa fa-gamepad"></i>
-                            <span className="fontawesome-text"> Arcade</span>
-                          </a>
-                        </li>
-                        <li className="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-228">
-                          <a href="https://www.tiguandesign.com/gameleon/dark/category/adventure/">
-                            <i className="fa fa-bomb"></i>
-                            <span className="fontawesome-text"> Adventure</span>
-                          </a>
-                        </li>
-                        <li className="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-283">
-                          <a href="https://www.tiguandesign.com/gameleon/dark/category/action/">
-                            <i className="fa fa-car-crash"></i>
-                            <span className="fontawesome-text"> Action</span>
-                          </a>
-                        </li>
-                        <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-296">
-                          <a href="https://www.tiguandesign.com/gameleon/dark/most-played-games/">
-                            <i className="fa fa-fire"></i>
-                            <span className="fontawesome-text">
-                              Most Played
-                            </span>
-                          </a>
-                        </li>
-                        <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-479">
-                          <a href="#">
-                            <i className="fa fa-mobile-alt"></i>
-                            <span className="fontawesome-text">
-                              Game Format
-                            </span>
-                          </a>
-                        </li>
-                      </ul>
-                    </nav>
-                  </div>
-                </div>
+        <div id="top-bar" className="bg-[#161616] h-auto shadow-md w-full">
+          <div className="container">
+            <div className="flex justify-between items-center">
+              {/* Hamburger for Mobile */}
+              <button
+                onClick={() => setMenuOpen(!menuOpen)}
+                className="text-white text-xl md:hidden"
+              >
+                <i className="fas fa-bars"></i>
+              </button>
 
-                <div className="menu-search-wrap">
-                  <div className="main-menu-search">
-                    <div id="search-container" className="click-search">
-                      <div className="delimiter-wrapper">
-                        <div className="delimiter"></div>
-                      </div>
-                      <i className="fas fa-search"></i>
-                    </div>
-                  </div>
-                </div>
+              {/* Logo or Home (optional mobile center title) */}
+              <div className="text-white text-lg md:hidden font-bold">
+                <i className="fa fa-gamepad mr-2"></i>Gamelon
               </div>
+
+              {/* Search Icon */}
+              <div className="text-white md:hidden">
+                <i className="fas fa-search text-xl"></i>
+              </div>
+
+              {/* Navigation - Desktop */}
+              <nav className="hidden md:flex space-x-2 items-center">
+                <a
+                  href="/"
+                  className="bg-red-600 text-white px-3 py-2 flex items-center space-x-2 rounded-sm"
+                >
+                  <i className="fa fa-home"></i>
+                  <span className="uppercase">Home</span>
+                </a>
+                <a
+                  href="/category/arcade"
+                  className="text-white px-3 py-2 flex items-center space-x-2 hover:text-red-500"
+                >
+                  <i className="fa fa-gamepad"></i>
+                  <span className="uppercase">Arcade</span>
+                </a>
+                <a
+                  href="/category/adventure"
+                  className="text-white px-3 py-2 flex items-center space-x-2 hover:text-red-500"
+                >
+                  <i className="fa fa-bomb"></i>
+                  <span className="uppercase">Adventure</span>
+                </a>
+                <a
+                  href="/category/action"
+                  className="text-white px-3 py-2 flex items-center space-x-2 hover:text-red-500"
+                >
+                  <i className="fa fa-car-crash"></i>
+                  <span className="uppercase">Action</span>
+                </a>
+                <a
+                  href="/most-played-games"
+                  className="text-white px-3 py-2 flex items-center space-x-2 hover:text-red-500"
+                >
+                  <i className="fa fa-fire"></i>
+                  <span className="uppercase">Most Played</span>
+                </a>
+                <a
+                  href="#"
+                  className="text-white px-3 py-2 flex items-center space-x-2 hover:text-red-500"
+                >
+                  <i className="fa fa-mobile-alt"></i>
+                  <span className="uppercase">Game Format</span>
+                  <i className="fa fa-caret-down ml-1"></i>
+                </a>
+                <div className="text-white ">
+                  <i className="fas fa-search cursor-pointer hover:text-red-500 text-xl "></i>
+                </div>
+              </nav>
             </div>
+
+            {/* Mobile Menu Dropdown */}
+            {menuOpen && (
+              <div className="flex flex-col mt-3 space-y-1 md:hidden">
+                <a
+                  href="/"
+                  className="bg-red-600 text-white px-3 py-2 flex items-center space-x-2"
+                >
+                  <i className="fa fa-home"></i>
+                  <span className="uppercase">Home</span>
+                </a>
+                <a
+                  href="/category/arcade"
+                  className="text-white px-3 py-2 flex items-center space-x-2 hover:text-red-500"
+                >
+                  <i className="fa fa-gamepad"></i>
+                  <span className="uppercase">Arcade</span>
+                </a>
+                <a
+                  href="/category/adventure"
+                  className="text-white px-3 py-2 flex items-center space-x-2 hover:text-red-500"
+                >
+                  <i className="fa fa-bomb"></i>
+                  <span className="uppercase">Adventure</span>
+                </a>
+                <a
+                  href="/category/action"
+                  className="text-white px-3 py-2 flex items-center space-x-2 hover:text-red-500"
+                >
+                  <i className="fa fa-car-crash"></i>
+                  <span className="uppercase">Action</span>
+                </a>
+                <a
+                  href="/most-played-games"
+                  className="text-white px-3 py-2 flex items-center space-x-2 hover:text-red-500"
+                >
+                  <i className="fa fa-fire"></i>
+                  <span className="uppercase">Most Played</span>
+                </a>
+                <a
+                  href="#"
+                  className="text-white px-3 py-2 flex items-center space-x-2 hover:text-red-500"
+                >
+                  <i className="fa fa-mobile-alt"></i>
+                  <span className="uppercase">Game Format</span>
+                  <i className="fa fa-caret-down ml-1"></i>
+                </a>
+              </div>
+            )}
           </div>
         </div>
       </section>
 
-      <div
-        id="td-modular-slider"
-        className="flex flex-col md:flex-row flex-wrap mt-4"
-      >
-        {/* Main Slide */}
-        <div className="relative w-full h-[220px] md:w-[610px] md:h-[349px] overflow-hidden">
-          <Link href="https://www.tiguandesign.com/gameleon/dark/mirrors-edge-refines-the-game/">
-            <div className="relative w-full h-full">
-              <Image
-                src="/images/games/6-610x420.png"
-                alt="Mirror’s Edge"
-                layout="fill"
-                objectFit="cover"
-                className="z-0"
-              />
-              <div className="absolute inset-0 bg-black/10 z-10" />
-              <div className="absolute bottom-4 left-4 z-20 text-white">
-                <h1 className="text-lg md:text-xl font-bold uppercase">
-                  Mirror’s Edge refines the game
-                </h1>
-              </div>
-            </div>
-          </Link>
-        </div>
-
-        {/* Small Cards Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-2 w-full md:w-[448px] h-auto md:h-[349px] gap-0">
-          {smallPosts.map((post) => (
-            <div
-              key={post.title}
-              className="relative w-full h-[160px] md:w-[224px] md:h-[174px]"
-            >
-              <Link href={post.link}>
+      {/* <div className="container-fluid">
+        <div id="td-modular-slider" className="mt-4 text-white container ">
+          <div className="flex flex-col md:flex-row md:gap-0">
+            
+            <div className="relative w-full h-[220px] md:w-[610px] md:h-[349px] overflow-hidden">
+              <Link href="https://www.tiguandesign.com/gameleon/dark/mirrors-edge-refines-the-game/">
                 <div className="relative w-full h-full">
                   <Image
-                    src={post.image}
-                    alt={post.title}
+                    src="/images/games/6-610x420.png"
+                    alt="Mirror’s Edge"
                     layout="fill"
                     objectFit="cover"
                     className="z-0"
                   />
-                  <div className="absolute inset-0 bg-black/5 z-10" />
-                  <div className="absolute bottom-2 left-2 z-20 text-white">
-                    <h2 className="text-xs md:text-sm font-semibold leading-tight uppercase">
-                      {post.title}
-                    </h2>
+                  <div className="absolute inset-0 bg-black/10 z-10" />
+                  <div className="absolute bottom-4 left-4 z-20">
+                    <h1 className="text-lg md:text-xl text-white font-bold uppercase">
+                      Mirror’s Edge refines the game
+                    </h1>
                   </div>
                 </div>
               </Link>
             </div>
-          ))}
+
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 w-full md:w-[448px] h-auto gap-0">
+              {smallPosts.map((post) => (
+                <div
+                  key={post.title}
+                  className="relative w-full h-[160px] md:h-[174px]"
+                >
+                  <Link href={post.link}>
+                    <div className="relative w-full h-full">
+                      <Image
+                        src={post.image}
+                        alt={post.title}
+                        layout="fill"
+                        objectFit="cover"
+                        className="z-0"
+                      />
+                      <div className="absolute inset-0 bg-black/5 z-10" />
+                      <div className="absolute bottom-2 left-2 z-20">
+                        <h2 className="text-xs text-white md:text-sm font-semibold leading-tight uppercase">
+                          {post.title}
+                        </h2>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div> */}
+
+      <div className={`container-fluid`}>
+        <div className="container p-0">
+        <div className="row g-0 flex-wrap">
+          {/* Left large image block */}
+          <div className="col-lg-8 col-12">
+            <div className={`card large`}>
+              <Image
+                src={"/images/games/6-610x420.png"}
+                fill
+                alt={"6-610x420.png"}
+                className={'image'}
+              />
+              <div className={'overlay'}>
+                <h1 className="text-lg md:text-xl text-white font-bold uppercase">
+                      Mirror’s Edge refines the game
+                    </h1>
+              </div>
+            </div>
+          </div>
+
+          {/* Right smaller blocks */}
+          <div className="col-lg-4 col-12 p-0">
+            <div className="row g-0 p-0">
+              {games.map((game, index) => (
+                <div key={index} className="col-6 col-sm-6 col-lg-6 col-xxl-6 p-0">
+                  <div className={"card"}>
+                    <Image
+                      src={game.image}
+                      fill
+                      alt={game.title}
+                      className={'image'}
+                    />
+                    <div className={'overlaySmall'}>
+                      <p>{game.title}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
         </div>
       </div>
 
       <div className="text-white py-6">
-        <div className="container mx-auto px-4">
+        <div className="container  py-3 mx-auto px-4">
           {/* Header */}
           <div className="flex justify-between items-center mb-6">
-            <h3 className="text-xl font-bold">
-              <Link href="https://www.tiguandesign.com/gameleon/dark/category/arcade/">
-                <span className="text-white">Today Highlights</span>
-              </Link>
-              <span className="text-red-500 ml-2">top</span>
-            </h3>
+            <h2 className="d-flex align-items-center mb-3">
+              <span className="text-danger fs-4 fw-bold me-2">|</span>
+              Today Highlights
+              <span className="text-danger fw-bold fst-italic ms-2">top</span>
+            </h2>
             <Link href="https://www.tiguandesign.com/gameleon/dark/category/arcade/">
               <div className="bg-red-600 text-white px-3 py-1 text-xs cursor-pointer font-semibold uppercase">
                 view all
@@ -650,7 +815,7 @@ export default function Home() {
           </div>
 
           {/* Grid of Highlight Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 ">
             {highlights.map((item) => (
               <div key={item.title} className="relative group overflow-hidden">
                 <Link href={item.link}>
@@ -684,18 +849,15 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="text-white py-10">
-        <div className="container mx-auto px-4">
+      <div className="text-white py-10 ">
+        <div className="container py-3 mx-auto px-4">
           {/* Header */}
           <div className="flex justify-between items-center mb-8">
-            <h3 className="text-2xl font-bold flex items-center">
-              <a href="https://www.tiguandesign.com/gameleon/dark/category/defense/" className="text-white">
-                Popular
-              </a>
-              <span className="ml-2 text-red-500 uppercase font-semibold">
-                HOT
-              </span>
-            </h3>
+            <h2 className="d-flex align-items-center mb-3">
+              <span className="text-danger fs-4 fw-bold me-2">|</span>
+              Popular
+              <span className="text-danger fw-bold fst-italic ms-2">HOT</span>
+            </h2>
             <a
               href="https://www.tiguandesign.com/gameleon/dark/category/defense/"
               className="bg-red-600 hover:bg-red-700 text-white text-xs px-4 py-2 uppercase font-bold"
@@ -720,9 +882,11 @@ export default function Home() {
                 </a>
                 <div className="p-4">
                   <h2 className="text-lg font-semibold mb-1 hover:text-red-400 transition duration-200">
-                    <a href={post.link} className="text-white">{post.title}</a>
+                    <a href={post.link} className="text-white">
+                      {post.title}
+                    </a>
                   </h2>
-                  <p className="text-sm" style={{color:'#f63a3a'}}>
+                  <p className="text-sm" style={{ color: "#f63a3a" }}>
                     {post.date}
                     <span className="text-gray-400 ml-2">- No Comments</span>
                   </p>
@@ -733,7 +897,121 @@ export default function Home() {
         </div>
       </div>
 
-      <section className="margintop">
+      <div className="container text-white p-4 rounded my-4">
+        <h2 className="d-flex align-items-center mb-3">
+          <span className="text-danger fs-4 fw-bold me-2">|</span>
+          Weekly Games
+          <span className="text-danger fw-bold fst-italic ms-2">BEST</span>
+        </h2>
+
+        <div className="d-flex flex-wrap  justify-content-start">
+          {WeeklyGames.map((src, index) => (
+            <div
+              key={index}
+              className="rounded overflow-hidden m-1"
+              style={{
+                width: "calc(100% / 13 - 8px)",
+                height: "80px",
+                flex: "0 0 auto",
+              }}
+            >
+              <Image
+                src={src}
+                alt={`Game ${index + 1}`}
+                width={67}
+                height={67}
+                className="img-fluid rounded"
+                style={{ objectFit: "cover", width: "100%", height: "100%" }}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="container-fluid  text-white py-5">
+        <div className="container  p-3">
+          <div className="row">
+            {/* Left Column */}
+            <div className="col-lg-4 mb-4">
+              <h1 className="fw-bold mb-3" style={{ fontSize: "2.5rem" }}>
+                <span className="text-danger">GAME</span>
+                <span className="text-white">LEON</span>
+              </h1>
+              <p className="text-muted">
+                Gameleon is a <strong>WordPress arcade theme</strong> for online
+                games, gaming, HTML5 games, magazine, newspaper, reviews or
+                blogging site.
+              </p>
+              <p className="text-muted">
+                You can have your own unique gaming site using our WordPress
+                Arcade Theme and impress your online players with this fully
+                functional WordPress Theme for Online Games.
+              </p>
+              <p className="text-muted">
+                Of course, you can use it for any other purpose: magazine, blog,
+                newspaper, editorial or review site.
+              </p>
+            </div>
+
+            {/* Center Column - Posts */}
+            <div className="col-lg-4 mb-4">
+              <h3 className="fw-bold mb-4">
+                <span className="text-danger me-2">|</span>
+                Recent Posts
+              </h3>
+              {RecentPosts.map((post, index) => (
+                <div key={index} className="mb-4">
+                  <h6 className="text-white fw-bold mb-1">{post.title}</h6>
+                  <div className="text-danger small mb-1">{post.date}</div>
+                  <div className="text-muted small">
+                    <i className="fas fa-trophy me-1 text-muted"></i>
+                    {post.plays} Plays
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Right Column - Email + Tags */}
+            <div className="col-lg-4">
+              {/* Newsletter */}
+              <div className="bg-black p-3 mb-4 rounded">
+                <p className="mb-2 small">
+                  Get the best games news into your inbox!
+                </p>
+                <div className="input-group">
+                  <input
+                    type="email"
+                    className="form-control border-0"
+                    placeholder="ENTER YOUR EMAIL"
+                    style={{ backgroundColor: "#fff" }}
+                  />
+                  <button className="btn btn-danger fw-bold px-3">
+                    Subscribe
+                  </button>
+                </div>
+              </div>
+
+              {/* Tag Cloud */}
+              <h3 className="fw-bold mb-3">
+                <span className="text-danger me-2">|</span>
+                Tag Cloud
+              </h3>
+              <div className="d-flex flex-wrap gap-2">
+                {tags.map((tag, i) => (
+                  <span
+                    key={i}
+                    className="bg-dark text-white px-3 py-1 rounded small"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* <section className="margintop">
         <div className="container-fluid pt-5 pt-md-0">
           <div className="container p-0">
             <div className="title-compnay text-center mb-md-5 mb-3">
@@ -3475,7 +3753,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <Footer />
+      <Footer /> */}
     </>
   );
 }

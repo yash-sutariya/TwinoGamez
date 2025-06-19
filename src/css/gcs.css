@@ -5127,8 +5127,66 @@ lite-youtube.lyt-activated > .lty-playbtn {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 10px;
-  max-width: 1080px;
+  /* max-width: 1080px; */
   margin: auto;
+}
+
+
+.card {
+  position: relative;
+  overflow: hidden;
+  height: 180px;
+  margin: 5px;
+}
+
+.large {
+  height: 410px;
+}
+
+/* Responsive: reduce height on mobile */
+@media (max-width: 768px) {
+  .card {
+    height: 160px;
+  }
+
+  .large {
+    height: 250px;
+  }
+
+  .overlay h3 {
+    font-size: 1rem;
+  }
+
+  .overlaySmall p {
+    font-size: 0.75rem;
+  }
+}
+
+.image {
+  object-fit: cover;
+  z-index: 1;
+}
+
+
+.overlay,
+.overlaySmall {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  z-index: 2;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px black;
+}
+
+.overlay h3 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.overlaySmall p {
+  font-size: 0.9rem;
+  margin: 0;
 }
 
 .td-main-slide {
