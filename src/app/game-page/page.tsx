@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import GCSWebinar from "./gcs-webinar";
 import Script from "next/script";
+import GamePage from "./game-page";
 
 export const metadata: Metadata = {
   title: "Gomzi Consultants Services - Business Consulting Services",
@@ -29,7 +29,7 @@ export default function GomziConsultingPage() {
           `,
         }}
       />
-      <GCSWebinar />
+      <GamePage />
     </>
   );
 }

@@ -1,4 +1,3 @@
-// eslint-disable-next-line @next/next/no-img-element
 "use client";
 
 import "bootstrap/dist/css/bootstrap.css";
@@ -7,209 +6,173 @@ import "../../css/bootstrap.css";
 import "../../css/gcs.css";
 import "../../css/media.css";
 import "../../js/popper.min.js";
-import { useEffect, useState } from "react";
-import $ from "jquery";
-import Link from "next/link";
-import Gotop from "../gotop/Gotop";
-import MobileUserInfo from "../../js/menu/mobileUserInfo";
-import UserInfo from "../../js/menu/userInfo";
+import { useState } from "react";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 export default function Header({ logoURL, mobileLogoURL, altLogo }: any) {
-  function openside() {
-    var demoElement = document.getElementById("demo");
-    if (demoElement) {
-      demoElement.style.width = "100%";
-    }
-  }
-
-  function sideclose() {
-    var demoElement = document.getElementById("demo");
-    if (demoElement) {
-      demoElement.style.width = "0px";
-    }
-  }
-  useEffect(() => {
-    $(function () {
-      //Scroll event
-      $(window).scroll(function () {
-        var scrolled: any = $(window).scrollTop();
-        if (scrolled > 200) $(".go-top").fadeIn("slow");
-        if (scrolled < 200) $(".go-top").fadeOut("slow");
-      });
-
-      //Click event
-      $(".go-top").click(function () {
-        $("html, body").animate({ scrollTop: "0" }, 500);
-      });
-    });
-    $(function () {
-      // Scroll event
-      $(window).scroll(function () {
-        var scrolled: any = $(window).scrollTop();
-        if (scrolled > 100) {
-          $(".floting-btn, .floting-w-btn").fadeIn("slow");
-        }
-        if (scrolled < 100) {
-          $(".floting-btn, .floting-w-btn").fadeOut("slow");
-        }
-      });
-
-      // Click event
-      $(".floting-btn, .floting-w-btn").click(function () {
-        $("html, body").animate({ scrollTop: "0" }, 100);
-      });
-    });
-  }, []);
-
-  const [activeLink, setActiveLink] = useState("/");
-
-  useEffect(() => {
-    setActiveLink(window.location.pathname);
-  }, []);
-
-  const handleSetActiveLink = (link: any) => {
-    setActiveLink(link);
-  };
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <>
-      <header>
-        {/* <div className="container-fluid main p-0 m-0">
-          <div className="d-lg-block d-none log">
-            <Link href="/">
-              <div>
-                <img src={logoURL} alt={altLogo} className="header-logo-170" />
-              </div>
-            </Link>
-          </div>
-          <div className="d-lg-none d-sm-block t0 log1">
-            <Link href="/">
-              <div>
-                <img src={logoURL} alt={altLogo} className="header-logo-160" />
-              </div>
-            </Link>
-          </div>
-          <div className="lang">
-            <ul className="mb-3">
-              <li>
-                <Link href="/" passHref>
-                  <p
-                    className={activeLink === "/" ? "m-0 active" : "m-0"}
-                    onClick={() => handleSetActiveLink("/")}
-                  >
-                    Home
-                  </p>
-                </Link>
-              </li>
-              <li>
-                <Link href="/fitit/digital-marketing-agency" passHref>
-                  <p
-                    className={
-                      activeLink === "/fitit/digital-marketing-agency"
-                        ? "m-0 active"
-                        : "m-0"
-                    }
-                    onClick={() =>
-                      handleSetActiveLink("/fitit/digital-marketing-agency")
-                    }
-                  >
-                    FitIT
-                  </p>
-                </Link>
-              </li>
-              <li>
-                <Link href="/takshak/business-consulting-services" passHref>
-                  <p
-                    className={
-                      activeLink === "/takshak/business-consulting-services"
-                        ? "m-0 active"
-                        : "m-0"
-                    }
-                    onClick={() =>
-                      handleSetActiveLink(
-                        "/takshak/business-consulting-services"
-                      )
-                    }
-                  >
-                    Takshak
-                  </p>
-                </Link>
-              </li>
-              <li>
-                <Link href="/atoz/financial-advisory-services" passHref>
-                  <p
-                    className={
-                      activeLink === "/atoz/financial-advisory-services"
-                        ? "m-0 active"
-                        : "m-0"
-                    }
-                    onClick={() =>
-                      handleSetActiveLink("/atoz/financial-advisory-services")
-                    }
-                  >
-                    AtoZ Finance
-                  </p>
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div className="side" id="demo">
-            <span className="closebtn" onClick={sideclose}>
-              &times;
-            </span>
-            <Link
-              href="/"
-              style={{
-                marginTop: "50px",
-                display: "flex",
-                justifyContent: "center",
-              }}
+    <header className="shadow-md w-full container-fluid mb-3">
+      <div className="header-inner w-auto h-auto flex flex-col sm:flex-row items-center justify-between mx-auto  px-4 py-2">
+        {/* Logo */}
+        <div
+          id="logo"
+          className="w-full sm:w-auto h-auto flex justify-center items-center sm:justify-start"
+        >
+          <a href="https://www.tiguandesign.com/gameleon/dark/">
+            <img
+              src="/images/games/logo_gameleon3.png"
+              width="200"
+              height="80"
+              alt="Arcade Theme"
+              title="Arcade Theme"
+              className="h-auto"
+            />
+          </a>
+        </div>
+
+        {/* Spacer or content if needed */}
+        <div className="hidden sm:block sm:w-1/3"></div>
+      </div>
+      {/* Top bar */}
+      <div className="container mx-auto p=0">
+        <div className="container mx-auto">
+          <div className="flex justify-end space-x-6">
+            <a
+              href="/game-page"
+              className="flex items-center space-x-1 text-red-500 hover:underline"
             >
-              <img
-                src={mobileLogoURL}
-                alt={altLogo}
-                className="header-logo-35"
-              />
-            </Link>
-            <Link href="/">Home</Link>
-            <Link href="/fitit/digital-marketing-agency">FitIT</Link>
-            <Link href="/takshak/business-consulting-services">Takshak</Link>
-            <Link href="/atoz/financial-advisory-services">AtoZ Finance</Link>
-            <ul className="mobileUserInfo aa">
-              <MobileUserInfo />
-            </ul>
-          </div>
-          <button
-            className="d-lg-none d-sm-block btnn"
-            style={{ cursor: "pointer", fontSize: "20px", color: "black" }}
-            onClick={openside}
-          >
-            &#9776;
-          </button>
-          <div className="login d-lg-block d-none">
-            <ul>
-              <li style={{ fontSize: "18px" }} className="ddmenu userInfo">
-                <UserInfo />
-              </li>
-            </ul>
-          </div>
-        </div> */}
-        <div className="header-inner d-flex mx-auto">
-          <div id="logo" className="d-md-4">
-            <a href="https://www.tiguandesign.com/gameleon/dark/">
-              <img
-                src="/images/games/logo_gameleon3.png"
-                width="250"
-                height="100"
-                alt="Arcade Theme"
-                title="Arcade Theme"
-              />
+              <i className="fa fa-clock text-2xl mr-1"></i>
+              <span className="uppercase font-semibold text-white fs-5">
+                Latest
+              </span>
+            </a>
+            <a
+              href="https://www.tiguandesign.com/gameleon/dark/most-popular-games/"
+              className="flex items-center space-x-1 text-red-500 hover:underline"
+            >
+              <i className="fa fa-star text-2xl mr-1"></i>
+              <span className="uppercase font-semibold text-white fs-5">
+                Popular
+              </span>
+            </a>
+            <a
+              href="https://www.tiguandesign.com/gameleon/dark/most-played-games/"
+              className="flex items-center space-x-1 text-red-500 hover:underline"
+            >
+              <i className="fa fa-fire text-2xl mr-1"></i>
+              <span className="uppercase font-semibold text-white fs-5">
+                Hot
+              </span>
             </a>
           </div>
-          <div className="col-md-2"></div>
         </div>
-      </header>
-      <Gotop />
-    </>
+
+        {/* Navbar */}
+        <nav className=" shadow-sm container-fluid">
+          <div className="mx-auto px-4 flex justify-between items-center h-14">
+            {/* Logo (optional) */}
+            <div className="text-white font-bold text-lg sm:hidden">
+              <i className="fa fa-gamepad mr-2" /> GAMELON
+            </div>
+
+            {/* Hamburger for mobile */}
+            <div className="sm:hidden">
+              <button
+                onClick={() => setMenuOpen(!menuOpen)}
+                className="text-white text-xl focus:outline-none"
+              >
+                <i className="fas fa-bars"></i>
+              </button>
+            </div>
+
+            {/* Main Menu */}
+            <div className="hidden sm:flex items-center space-x-6 text-white">
+              <a
+                href="/"
+                className="flex items-center text-white hover:text-red-500 "
+              >
+                <i className="fa fa-home mr-1"></i>
+                <span className="uppercase font-semibold ">Home</span>
+                <i className="fa fa-caret-down ml-1 text-xs"></i>
+              </a>
+              <a
+                href="/category/arcade"
+                className="flex items-center text-white hover:text-red-500"
+              >
+                <i className="fa fa-gamepad mr-1"></i>
+                <span className="uppercase font-semibold">Arcade</span>
+              </a>
+              <a
+                href="/category/adventure"
+                className="flex items-center text-white hover:text-red-500"
+              >
+                <i className="fa fa-bomb mr-1"></i>
+                <span className="uppercase font-semibold">Adventure</span>
+              </a>
+              <a
+                href="/category/action"
+                className="flex items-center text-white hover:text-red-500"
+              >
+                <i className="fa fa-car-crash mr-1"></i>
+                <span className="uppercase font-semibold">Action</span>
+              </a>
+              <a
+                href="/most-played-games"
+                className="flex items-center text-white hover:text-red-500"
+              >
+                <i className="fa fa-fire mr-1"></i>
+                <span className="uppercase font-semibold">Most Played</span>
+              </a>
+              <a
+                href="#"
+                className="flex items-center text-white hover:text-red-500"
+              >
+                <i className="fa fa-mobile-alt mr-1"></i>
+                <span className="uppercase font-semibold">Game Format</span>
+                <i className="fa fa-caret-down ml-1 text-xs"></i>
+              </a>
+            </div>
+
+            {/* Search Icon */}
+            <div className="hidden sm:block text-white">
+              <i className="fas fa-search text-lg cursor-pointer hover:text-red-500"></i>
+            </div>
+          </div>
+
+          {/* Mobile Menu Dropdown */}
+          {menuOpen && (
+            <div className="sm:hidden px-4 pb-4 bg-[#111] text-white space-y-2">
+              <a href="/" className="block hover:text-red-500">
+                Home
+              </a>
+              <a href="/category/arcade" className="block hover:text-red-500">
+                Arcade
+              </a>
+              <a
+                href="/category/adventure"
+                className="block hover:text-red-500"
+              >
+                Adventure
+              </a>
+              <a href="/category/action" className="block hover:text-red-500">
+                Action
+              </a>
+              <a href="/most-played-games" className="block hover:text-red-500">
+                Most Played
+              </a>
+              <a href="#" className="block hover:text-red-500">
+                Game Format
+              </a>
+              <div className="pt-2 border-t border-gray-600">
+                <i className="fas fa-search text-lg mr-2" />
+                <span>Search</span>
+              </div>
+            </div>
+          )}
+        </nav>
+      </div>
+    </header>
   );
 }

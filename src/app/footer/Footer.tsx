@@ -60,122 +60,116 @@ export default function Footer() {
     });
   }, []);
 
+  // footer
+
+  const tags = [
+    "ARCADE",
+    "HTML5",
+    "CARS",
+    "AVENTURE",
+    "RACING",
+    "WORDPRESS",
+    "GIRLS",
+    "GAMES",
+  ];
+
+  const RecentPosts = [
+    {
+      title: "New Battlefield Season Starts Soon",
+      date: "Feb 25, 2021",
+      plays: 4971,
+    },
+    {
+      title: "Our Highest Review Scores of 2020",
+      date: "Feb 25, 2021",
+      plays: 4976,
+    },
+    {
+      title: "This Game will Keep You up All Night",
+      date: "Feb 25, 2021",
+      plays: 4996,
+    },
+  ];
+
   return (
-    <footer className="bg-footer">
-      <div className="container">
-        <div className="row">
-          <div className="col-md-4">
-            <div className="footer-sec">
-              <div className="logo d-none d-md-block">
-                <img
-                  src="/images/logos/gcs-logo-normal.png"
-                  alt="GCS"
-                  className="header-logo-180"
-                />
-              </div>
-              <div className="logo d-block d-md-none">
-                <img
-                  src="/images/logos/gcs-logo-normal.png"
-                  alt="GCS"
-                  className="header-logo-180"
-                />
-              </div>
-              <p>
-                Gomzi Consulting Services (GCS) is a leading group managing
-                diverse businesses, offering customized solutions for growth and
-                profitability.
+    <footer className="">
+      <div className="container-fluid  text-white py-5">
+        <div className="container  p-3">
+          <div className="row">
+            {/* Left Column */}
+            <div className="col-lg-4 mb-4">
+              <h1 className="fw-bold mb-3" style={{ fontSize: "2.5rem" }}>
+                <span className="text-danger">GAME</span>
+                <span className="text-white">LEON</span>
+              </h1>
+              <p className="text-muted">
+                Gameleon is a <strong>WordPress arcade theme</strong> for online
+                games, gaming, HTML5 games, magazine, newspaper, reviews or
+                blogging site.
               </p>
-              <ul className="mt-4">
-                <li>
-                  <Link href="tel:+916354051487">
-                    <i className="fas fa-phone-alt"></i> +91 97731 74522
-                  </Link>
-                </li>
-                <li>
-                  <Link href="mailto:gomziconsultingservices@gmail.com">
-                    <i className="fas fa-envelope"></i>
-                    gomziconsultingservices@gmail.com
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="https://maps.app.goo.gl/BcrHe5i8AC3U6uYq5"
-                    target="_blank"
+              <p className="text-muted">
+                You can have your own unique gaming site using our WordPress
+                Arcade Theme and impress your online players with this fully
+                functional WordPress Theme for Online Games.
+              </p>
+              <p className="text-muted">
+                Of course, you can use it for any other purpose: magazine, blog,
+                newspaper, editorial or review site.
+              </p>
+            </div>
+
+            {/* Center Column - Posts */}
+            <div className="col-lg-4 mb-4">
+              <h3 className="fw-bold mb-4">
+                <span className="text-danger me-2">|</span>
+                Recent Posts
+              </h3>
+              {RecentPosts.map((post, index) => (
+                <div key={index} className="mb-4">
+                  <h6 className="text-white fw-bold mb-1">{post.title}</h6>
+                  <div className="text-danger small mb-1">{post.date}</div>
+                  <div className="text-muted small">
+                    <i className="fas fa-trophy me-1 text-muted"></i>
+                    {post.plays} Plays
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Right Column - Email + Tags */}
+            <div className="col-lg-4">
+              {/* Newsletter */}
+              <div className="bg-black p-3 mb-4 rounded">
+                <p className="mb-2 small">
+                  Get the best games news into your inbox!
+                </p>
+                <div className="input-group">
+                  <input
+                    type="email"
+                    className="form-control border-0"
+                    placeholder="ENTER YOUR EMAIL"
+                    style={{ backgroundColor: "#fff" }}
+                  />
+                  <button className="btn btn-danger fw-bold px-3">
+                    Subscribe
+                  </button>
+                </div>
+              </div>
+
+              {/* Tag Cloud */}
+              <h3 className="fw-bold mb-3">
+                <span className="text-danger me-2">|</span>
+                Tag Cloud
+              </h3>
+              <div className="d-flex flex-wrap gap-2">
+                {tags.map((tag, i) => (
+                  <span
+                    key={i}
+                    className="bg-dark text-white px-3 py-1 rounded small"
                   >
-                    <i className="fas fa-map-marker-alt"></i> 2, Abhushan
-                    Bunglows, Near Alkapuri Char Rasta, Katargam, Surat - 395004
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="col-md-2 col-6 mt-md-5 mt-3">
-            <div className="footer-test ml-lg-3">
-              <p>Links</p>
-              <ul className="mt-4">
-                <li>
-                  <Link href="/">Home</Link>
-                </li>
-                <li>
-                  <Link href="/fitit/digital-marketing-agency">FitIT</Link>
-                </li>
-                <li>
-                  <Link href="/takshak/business-consulting-services">
-                    Takshak
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/atoz/financial-advisory-services">
-                    A to Z Finance
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/business-blog">Blog</Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="col-md-3 col-6 mt-md-5 mt-3">
-            <div className="footer-test ml-lg-4">
-              <p>Information</p>
-              <ul className="mt-4">
-                <li>
-                  <Link href="/term-and-conditions">Terms & Condition</Link>
-                </li>
-                <li>
-                  <Link href="/return-refund">Return and Refund</Link>
-                </li>
-                <li>
-                  <Link href="/cancellation-policy">Cancellation Policy</Link>
-                </li>
-                <li>
-                  <Link href="/privacy-policy">Privacy Policy</Link>
-                </li>
-                <li>
-                  <Link href="/about-us">About us</Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="col-md-3 mt-md-5 mt-3 p-0">
-            <div className="footer-test mr-md-3 ml-3 ml-md-0">
-              <p>Social Media</p>
-              <div className="f_social_icon mt-md-4 mt-3">
-                <Link
-                  href="https://www.facebook.com/profile.php?id=100090555890586"
-                  className="fab fa-facebook"
-                  target="_blank"
-                ></Link>
-                <Link
-                  href="https://www.instagram.com/gomziconsultingservices/"
-                  className="fab fa-instagram"
-                  target="_blank"
-                ></Link>
-                <Link
-                  href="https://www.youtube.com/@gomziconsultingservices/featured"
-                  className="fab fa-youtube"
-                  target="_blank"
-                ></Link>
+                    {tag}
+                  </span>
+                ))}
               </div>
             </div>
           </div>

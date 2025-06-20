@@ -4765,7 +4765,7 @@ lite-youtube.lyt-activated > .lty-playbtn {
   display: inline-block;
   max-width: 1060px;
   width: 100%;
-  height: 9.7em;
+  height: 9.7em; 
   margin: 0 20px;
 }
 
@@ -4894,7 +4894,7 @@ lite-youtube.lyt-activated > .lty-playbtn {
   background-color: #191919;
   height: 60px;
   line-height: 60px;
-  max-width: 1060px;
+  /* max-width: 1060px; */
   width: 100%;
   margin: 0 auto;
   position: relative;
@@ -4928,7 +4928,7 @@ lite-youtube.lyt-activated > .lty-playbtn {
 
 #top-bar {
   background-color: #191919;
-  height: 60px;
+  height: auto;
   line-height: 60px;
   max-width: 1060px;
   width: 100%;
@@ -5137,6 +5137,7 @@ lite-youtube.lyt-activated > .lty-playbtn {
   overflow: hidden;
   height: 180px;
   margin: 5px;
+  border: none !important;
 }
 
 .large {
@@ -5253,3 +5254,5 @@ lite-youtube.lyt-activated > .lty-playbtn {
   grid-template-columns: 1fr 1fr;
   gap: 10px;
 }
+
+
