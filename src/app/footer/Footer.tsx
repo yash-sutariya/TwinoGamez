@@ -92,11 +92,10 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="">
-      <div className="container-fluid  text-white py-5">
-        <div className="container  p-3">
+    <footer>
+      <div className="container-fluid  text-white ">
+        <div className="container background p-3 pt-5">
           <div className="row">
-            {/* Left Column */}
             <div className="col-lg-4 mb-4">
               <h1 className="fw-bold mb-3" style={{ fontSize: "2.5rem" }}>
                 <span className="text-danger">GAME</span>
@@ -118,12 +117,15 @@ export default function Footer() {
               </p>
             </div>
 
-            {/* Center Column - Posts */}
             <div className="col-lg-4 mb-4">
-              <h3 className="fw-bold mb-4">
-                <span className="text-danger me-2">|</span>
-                Recent Posts
-              </h3>
+              <h1 className="text-lg sm:text-xl font-bold mb-6">
+                <span className="text-white mr-2 border-l-4 border-red-600 pl-2">
+                  Recent Posts
+                </span>
+                <span className="text-danger fw-bold fst-italic ms-2">
+                  BEST
+                </span>
+              </h1>
               {RecentPosts.map((post, index) => (
                 <div key={index} className="mb-4">
                   <h6 className="text-white fw-bold mb-1">{post.title}</h6>
@@ -135,11 +137,8 @@ export default function Footer() {
                 </div>
               ))}
             </div>
-
-            {/* Right Column - Email + Tags */}
             <div className="col-lg-4">
-              {/* Newsletter */}
-              <div className="bg-black p-3 mb-4 rounded">
+              <div className="mb-4 rounded">
                 <p className="mb-2 small">
                   Get the best games news into your inbox!
                 </p>
@@ -156,7 +155,6 @@ export default function Footer() {
                 </div>
               </div>
 
-              {/* Tag Cloud */}
               <h3 className="fw-bold mb-3">
                 <span className="text-danger me-2">|</span>
                 Tag Cloud

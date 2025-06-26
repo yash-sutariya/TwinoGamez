@@ -409,21 +409,21 @@ export default function Home() {
       category: "Arcade",
       image:
         "/images/games/11551431038icp1zq8vwyilktwlu2cizwmzgrlscovzt98mmdhbtvhchclsdiq7z6yiiwiimlwt6luk7auwpbt8bicin-3-610x349.jpg",
-      link: "https://www.tiguandesign.com/gameleon/dark/the-ability-to-destroy-a-car/",
+      link: "/game-page",
     },
     {
       title: "A Rune 2 Patch is Finally Coming Now",
       category: "Arcade",
       image:
         "/images/games/11551431038icp1zq8vwyilktwlu2cizwmzgrlscovzt98mmdhbtvhchclsdiq7z6yiiwiimlwt6luk7auwpbt8bicin-3-610x349.jpg",
-      link: "https://www.tiguandesign.com/gameleon/dark/a-rune-2-patch-is-finally-coming-now/",
+      link: "/game-page/",
     },
     {
       title: "Epic’s Weekly Free Games",
       category: "Arcade",
       image:
         "/images/games/11551431038icp1zq8vwyilktwlu2cizwmzgrlscovzt98mmdhbtvhchclsdiq7z6yiiwiimlwt6luk7auwpbt8bicin-3-610x349.jpg",
-      link: "https://www.tiguandesign.com/gameleon/dark/epics-weekly-free-games/",
+      link: "/game-page",
     },
   ];
 
@@ -431,40 +431,37 @@ export default function Home() {
     {
       title: "The New Pop Culture Optimism",
       date: "Feb 15, 2021",
-      image: "/images/games/blog-g-30-610x349.jpg",
+      image: "/images/games/yahttvis7wy31-302x180.jpg",
       link: "#",
     },
     {
       title: "Game of the Year 2021",
       date: "Oct 14, 2020",
-      image:
-        "/images/games/Fortnite_blog_e3-2019_E32019_Booth_Announce_Social_BlogHeader-1920x1080-aab86610daa3a8a93be7e42859b793ef0fffb2e1-302x180.jpg",
+      image: "/images/games/yahttvis7wy31-302x180.jpg",
       link: "#",
     },
     {
       title: "My Favorite Hotel Game",
       date: "Oct 14, 2020",
-      image: "/images/games/blog-g-30-610x349.jpg",
+      image: "/images/games/yahttvis7wy31-302x180.jpg",
       link: "#",
     },
     {
       title: "One Side of This Galaxy",
       date: "Oct 14, 2020",
-      image:
-        "/images/games/Fortnite_blog_e3-2019_E32019_Booth_Announce_Social_BlogHeader-1920x1080-aab86610daa3a8a93be7e42859b793ef0fffb2e1-302x180.jpg",
+      image: "/images/games/yahttvis7wy31-302x180.jpg",
       link: "#",
     },
     {
       title: "May the Force Be With You",
       date: "Jul 14, 2020",
-      image: "/images/games/blog-g-30-610x349.jpg",
+      image: "/images/games/yahttvis7wy31-302x180.jpg",
       link: "#",
     },
     {
       title: "Doom Eternal Has a New Trailer",
       date: "Jun 25, 2020",
-      image:
-        "/images/games/Fortnite_blog_e3-2019_E32019_Booth_Announce_Social_BlogHeader-1920x1080-aab86610daa3a8a93be7e42859b793ef0fffb2e1-302x180.jpg",
+      image: "/images/games/yahttvis7wy31-302x180.jpg",
       link: "#",
     },
   ];
@@ -507,13 +504,48 @@ export default function Home() {
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
       />
 
-      <Header />
+      <div
+        className="bg-danger"
+        style={{
+          height: "100dvh",
+          width: "100%",
+          position: "fixed",
+          top: 0,
+          left: 0,
+          zIndex: -1,
+          overflow: "hidden",
+        }}
+      >
+        <img
+          src="/images/nature.jpg"
+          alt=""
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            height: "100%",
+            width: "100%",
+            backgroundColor: "rgba(0, 0, 0, 0.8)",
+          }}
+        ></div>
+      </div>
 
-      <div className={`container-fluid`}>
-        <div className="container ">
+      <div className="container-fluid">
+        <div className="container background">
+          <Header />
+        </div>
+      </div>
+      <div className="container-fluid">
+        <div className="container background p-2 px-4">
           <div className="row g-0 flex-wrap">
-            {/* Left large image block */}
-            <div className="col-lg-8 col-12">
+            <div className="col-lg-8 col-12 p-0">
               <div className={`card large`}>
                 <Image
                   src={"/images/games/6-610x420.png"}
@@ -529,23 +561,32 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right smaller blocks */}
-            <div className="col-lg-4 col-12 p-0">
+            <div className="col-lg-4 col-12">
               <div className="row g-0 p-0">
                 {games.map((game, index) => (
-                  <div
-                    key={index}
-                    className="col-6 col-sm-6 col-lg-6 col-xxl-6 p-0"
-                  >
-                    <div className={"card"}>
+                  <div key={index} className="col-6 p-0">
+                    <div
+                      className="card position-relative"
+                      style={{ height: "200px", overflow: "hidden" }}
+                    >
                       <Image
                         src={game.image}
-                        fill
                         alt={game.title}
-                        className={"image"}
+                        fill
+                        style={{ objectFit: "cover" }}
                       />
-                      <div className={"overlaySmall"}>
-                        <p>{game.title}</p>
+                      <div
+                        style={{
+                          position: "absolute",
+                          bottom: 0,
+                          width: "100%",
+                          background: "rgba(0, 0, 0, 0.6)",
+                          color: "white",
+                          padding: "5px",
+                          fontSize: "0.9rem",
+                        }}
+                      >
+                        <p className="mb-0">{game.title}</p>
                       </div>
                     </div>
                   </div>
@@ -556,25 +597,28 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="text-white container-fluid py-6">
-        <div className="container py-3 mx-auto px-4">
-          <div className="flex justify-between items-center mb-6">
-            <h2 className="d-flex align-items-center mb-3">
-              <span className="text-danger fs-4 fw-bold me-2">|</span>
-              Today Highlights
-              <span className="text-danger fw-bold fst-italic ms-2">top</span>
-            </h2>
+      <div className="text-white container-fluid ">
+        <div className="container p-3 mx-auto px-4 background">
+          <div className="flex justify-between items-center mb-6 bg-black p-3">
+            <h1 className="text-lg sm:text-xl font-bold">
+              <span className="text-white mr-2 border-l-4 border-red-600 pl-2">
+                Today Highlights
+              </span>
+              <span className="text-danger fw-bold fst-italic ms-2">Top</span>
+            </h1>
             <Link href="https://www.tiguandesign.com/gameleon/dark/category/arcade/">
-              <div className="bg-red-600 text-white px-3 py-1 text-xs cursor-pointer font-semibold uppercase">
+              <div className="bg-red-600 text-white px-3 py-1 text-xs cursor-pointer font-semibold uppercase px-4 py-3">
                 view all
               </div>
             </Link>
           </div>
 
-          {/* Grid of Highlight Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 ">
             {highlights.map((item) => (
-              <div key={item.title} className="relative group overflow-hidden">
+              <div
+                key={item.title}
+                className="relative group overflow-hidden bg-dark p-2"
+              >
                 <Link href={item.link}>
                   <div className="relative w-full h-[220px] sm:h-[200px] md:h-[240px]">
                     <Image
@@ -582,9 +626,9 @@ export default function Home() {
                       alt={item.title}
                       layout="fill"
                       objectFit="cover"
-                      className="transition-transform duration-300 group-hover:scale-105"
+                      className="transition-transform duration-300"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
                     <div className="absolute bottom-4 left-4 z-10">
                       <p className="text-xm  font-semibold text-white uppercase">
                         {item.category}
@@ -593,9 +637,14 @@ export default function Home() {
                         {item.title}
                       </h2>
                     </div>
-                    <div className="absolute bottom-4 right-4 z-10">
-                      <button className="bg-white text-black text-sm px-3 py-1 flex items-center gap-1 font-bold uppercase">
-                        Play <span className="text-xs">&#9654;</span>
+                    <div className="absolute bottom-4 right-4 z-10 ">
+                      <button className="flex items-center bg-[#1a1a1a] text-white text-sm font-bold uppercase hover:bg-red-500  transition-colors duration-100">
+                        <span className="px-4" style={{ fontFamily: "roboto" }}>
+                          Play
+                        </span>
+                        <span className="w-px h-12 bg-white/40"></span>
+                        <span className="px-4 text-3xl">&#8250;</span>{" "}
+                        {/* › character */}
                       </button>
                     </div>
                   </div>
@@ -606,18 +655,19 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="text-white container-fluid py-10 ">
-        <div className="container  py-3 mx-auto px-4">
+      <div className="text-white container-fluid  ">
+        <div className="container py-3 mx-auto px-4 background">
           {/* Header */}
-          <div className="flex justify-between items-center mb-8">
-            <h2 className="d-flex align-items-center mb-3">
-              <span className="text-danger fs-4 fw-bold me-2">|</span>
-              Popular
+          <div className="flex justify-between items-center mb-6 bg-black p-3">
+            <h1 className="text-lg sm:text-xl font-bold ">
+              <span className="text-white mr-2 border-l-4 border-red-600 pl-2">
+                Popular
+              </span>
               <span className="text-danger fw-bold fst-italic ms-2">HOT</span>
-            </h2>
+            </h1>
             <a
               href="https://www.tiguandesign.com/gameleon/dark/category/defense/"
-              className="bg-red-600 hover:bg-red-700 text-white text-xs px-4 py-2 uppercase font-bold"
+              className="bg-red-600 hover:bg-red-700 text-white text-xs px-4 py-3 uppercase font-bold"
             >
               View All
             </a>
@@ -628,7 +678,7 @@ export default function Home() {
             {posts.map((post, index) => (
               <div
                 key={index}
-                className="bg-gray-900 rounded overflow-hidden shadow-md"
+                className="bg-gray-900 bg-dark p-2 rounded overflow-hidden shadow-md cursor-pointer"
               >
                 <a href={post.link}>
                   <img
@@ -637,7 +687,7 @@ export default function Home() {
                     className="w-full h-48 object-cover"
                   />
                 </a>
-                <div className="p-4">
+                <div className="p-3">
                   <h2 className="text-lg font-semibold mb-1 hover:text-red-400 transition duration-200">
                     <a href={post.link} className="text-white">
                       {post.title}
@@ -654,20 +704,21 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="container text-white p-4 rounded my-4">
-        <h2 className="d-flex align-items-center mb-3">
-          <span className="text-danger fs-4 fw-bold me-2">|</span>
-          Weekly Games
+      <div className="container text-white py-4 rounded background">
+        <h1 className="text-lg sm:text-xl font-bold mb-6 bg-black p-3">
+          <span className="text-white mr-2 border-l-4 border-red-600 pl-2">
+            Weekly Games
+          </span>
           <span className="text-danger fw-bold fst-italic ms-2">BEST</span>
-        </h2>
+        </h1>
 
-        <div className="d-flex flex-wrap  justify-content-start">
+        <div className="d-flex flex-wrap  justify-content-center gap-6">
           {WeeklyGames.map((src, index) => (
             <div
               key={index}
-              className="rounded overflow-hidden m-1"
+              className="rounded bg-dark p-1 overflow-hidden m-1"
               style={{
-                width: "calc(100% / 13 - 8px)",
+                width: "80px",
                 height: "80px",
                 flex: "0 0 auto",
               }}
@@ -675,10 +726,14 @@ export default function Home() {
               <Image
                 src={src}
                 alt={`Game ${index + 1}`}
-                width={67}
-                height={67}
+                width={60}
+                height={60}
                 className="img-fluid rounded"
-                style={{ objectFit: "cover", width: "100%", height: "100%" }}
+                style={{
+                  objectFit: "cover",
+                  width: "100%",
+                  height: "100%",
+                }}
               />
             </div>
           ))}

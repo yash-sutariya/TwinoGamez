@@ -5255,4 +5255,6 @@ lite-youtube.lyt-activated > .lty-playbtn {
   gap: 10px;
 }
 
-
+.background{
+  background-color: #212121;
+}
