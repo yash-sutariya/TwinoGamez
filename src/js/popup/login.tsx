@@ -4,7 +4,7 @@ import { Button, Form } from "react-bootstrap";
 import Modal from "react-bootstrap/Modal";
 import "react-toastify/dist/ReactToastify.css";
 import { axiosInstance } from "../config/api";
-import "../../../src/css/gcs.css";
+import "../../../src/css/style.css";
 import "../../../src/css/media.css";
 import Swal from "sweetalert2";
 

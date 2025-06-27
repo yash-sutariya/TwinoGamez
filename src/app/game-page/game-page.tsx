@@ -6,7 +6,7 @@ import Image from "next/image";
 
 import "../../css/landing.css";
 import "../../css/bootstrap.css";
-import "../../css/gcs.css";
+import "../../css/style.css";
 import "../../css/media.css";
 import "../../js/popper.min.js";
 
@@ -16,12 +16,15 @@ export default function GamePage() {
   const [showModal, setShowModal] = useState(false);
 
   const handleOpenModal = () => {
-    setShowModal(true);
-  };
+  setShowModal(true);
+  document.body.classList.add("no-scroll");
+};
 
-  const handleCloseModal = () => {
-    setShowModal(false);
-  };
+const handleCloseModal = () => {
+  setShowModal(false);
+  document.body.classList.remove("no-scroll");
+};
+
 
   const handleFullscreen = () => {
     const iframe = iframeRef.current;
@@ -84,7 +87,7 @@ export default function GamePage() {
 
   return (
     <div>
-      <div className="container-fulid mt-5">
+      <div className="container-fulid ">
         <div className="container p-0 background">
         <Header />
         </div>

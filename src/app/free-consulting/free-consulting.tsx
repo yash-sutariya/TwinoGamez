@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import "../../css/bootstrap.css";
-import "../../css/gcs.css";
+import "../../css/style.css";
 import "../../css/landing.css";
 import "../../css/media.css";
 import "../../js/popper.min.js";

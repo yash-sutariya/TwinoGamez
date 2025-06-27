@@ -4,7 +4,7 @@
 import "bootstrap/dist/css/bootstrap.css";
 import "../globals.css";
 import "../../css/bootstrap.css";
-import "../../css/gcs.css";
+import "../../css/style.css";
 import "../../css/media.css";
 import "../../js/popper.min.js";
 import { useEffect } from "react";

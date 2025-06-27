@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../css/landing.css";
 import "../css/bootstrap.css";
-import "../css/gcs.css";
+import "../css/style.css";
 import "../css/media.css";
 import "../js/popper.min.js";
 import Header from "./header/Header";
@@ -504,41 +504,13 @@ export default function Home() {
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
       />
 
-      <div
-        className="bg-danger"
-        style={{
-          height: "100dvh",
-          width: "100%",
-          position: "fixed",
-          top: 0,
-          left: 0,
-          zIndex: -1,
-          overflow: "hidden",
-        }}
-      >
-        <img
-          src="/images/nature.jpg"
-          alt=""
-          style={{
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            height: "100%",
-            width: "100%",
-            backgroundColor: "rgba(0, 0, 0, 0.8)",
-          }}
-        ></div>
+      <div className="background-wrapper">
+        <img src="/images/nature.jpg" alt="" className="background-image" />
+        <div className="background-overlay"></div>
       </div>
 
-      <div className="container-fluid">
-        <div className="container background">
+      <div className="container-fluid  p-0">
+        <div className="container background p-0">
           <Header />
         </div>
       </div>

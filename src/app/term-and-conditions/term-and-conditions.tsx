@@ -2,7 +2,7 @@
 "use client";
 import React from "react";
 import Head from "next/head";
-import "../../css/gcs.css";
+import "../../css/style.css";
 import "../../css/media.css";
 import "../../js/popper.min.js";
 import Header from "@/app/header/simpleHeader";

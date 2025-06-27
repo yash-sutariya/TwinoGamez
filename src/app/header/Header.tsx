@@ -3,7 +3,7 @@
 import "bootstrap/dist/css/bootstrap.css";
 import "../globals.css";
 import "../../css/bootstrap.css";
-import "../../css/gcs.css";
+import "../../css/style.css";
 import "../../css/media.css";
 import "../../js/popper.min.js";
 import { useState } from "react";
@@ -15,6 +15,7 @@ export default function Header({ logoURL, mobileLogoURL, altLogo }: any) {
   return (
     <header className="shadow-md w-full container-fluid">
       <div className="header-inner  w-auto h-auto flex flex-col sm:flex-row items-center justify-between mx-auto p-3">
+        {/* Logo */}
         <div
           id="logo"
           className="w-full sm:w-auto  flex justify-center items-center sm:justify-center"
@@ -90,7 +91,7 @@ export default function Header({ logoURL, mobileLogoURL, altLogo }: any) {
         </div>
 
         {/* Navbar */}
-        <nav className=" shadow-sm container-fluid">
+        <nav className=" shadow-sm container-fluid p-0">
           <div className="mx-auto  flex justify-between items-center h-14">
             {/* Logo (optional) */}
             <div className="text-white font-bold text-lg sm:hidden">
@@ -108,10 +109,10 @@ export default function Header({ logoURL, mobileLogoURL, altLogo }: any) {
             </div>
 
             {/* Main Menu */}
-            <div className="hidden sm:flex items-center space-x-6 text-white">
+            <div className="hidden sm:flex items-center space-x-6 text-white bg-danger">
               <a
                 href="/"
-                className="flex items-center text-white hover:text-red-500 "
+                className="flex items-center text-white hover:text-red-500"
               >
                 <i className="fa fa-home mr-1"></i>
                 <span className="uppercase font-semibold ">Home</span>

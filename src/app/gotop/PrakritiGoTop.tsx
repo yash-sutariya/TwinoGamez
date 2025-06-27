@@ -3,7 +3,7 @@
 
 import 'bootstrap/dist/css/bootstrap.css';
 import React, { useEffect, useState } from 'react';
-import '../../css/gcs.css';
+import '../../css/style.css';
 import '../../css/media.css';
 import "../../css/prakriti_by_jiya/style.css";
 import { animateScroll as scroll } from 'react-scroll';
