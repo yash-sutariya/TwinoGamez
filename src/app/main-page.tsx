@@ -466,36 +466,34 @@ export default function Home() {
     },
   ];
 
-  const WeeklyGames = [
-    "/images/games/fortnite-tease-1222x640-1-150x150.png",
-    "/images/games/fortnite-tease-1222x640-1-150x150.png",
-    "/images/games/fortnite-tease-1222x640-1-150x150.png",
-    "/images/games/fortnite-tease-1222x640-1-150x150.png",
-    "/images/games/fortnite-tease-1222x640-1-150x150.png",
-    "/images/games/fortnite-tease-1222x640-1-150x150.png",
-    "/images/games/fortnite-tease-1222x640-1-150x150.png",
-    "/images/games/fortnite-tease-1222x640-1-150x150.png",
-    "/images/games/fortnite-tease-1222x640-1-150x150.png",
-    "/images/games/fortnite-tease-1222x640-1-150x150.png",
-    "/images/games/fortnite-tease-1222x640-1-150x150.png",
-    "/images/games/fortnite-tease-1222x640-1-150x150.png",
-    "/images/games/fortnite-tease-1222x640-1-150x150.png",
-    "/images/games/fortnite-tease-1222x640-1-150x150.png",
-    "/images/games/fortnite-tease-1222x640-1-150x150.png",
-    "/images/games/fortnite-tease-1222x640-1-150x150.png",
-    "/images/games/fortnite-tease-1222x640-1-150x150.png",
-    "/images/games/fortnite-tease-1222x640-1-150x150.png",
-    "/images/games/fortnite-tease-1222x640-1-150x150.png",
-    "/images/games/fortnite-tease-1222x640-1-150x150.png",
-    "/images/games/fortnite-tease-1222x640-1-150x150.png",
-    "/images/games/fortnite-tease-1222x640-1-150x150.png",
-    "/images/games/fortnite-tease-1222x640-1-150x150.png",
-    "/images/games/fortnite-tease-1222x640-1-150x150.png",
-    "/images/games/fortnite-tease-1222x640-1-150x150.png",
-    "/images/games/fortnite-tease-1222x640-1-150x150.png",
-
-    // Add all your image paths here...
-  ];
+ const WeeklyGames = [
+  "/game-logo-webp/1.webp",
+  "/game-logo-webp/2.webp",
+  "/game-logo-webp/3.webp",
+  "/game-logo-webp/4.webp",
+  "/game-logo-webp/5.webp",
+  "/game-logo-webp/6.webp",
+  "/game-logo-webp/7.webp",
+  "/game-logo-webp/8.webp",
+  "/game-logo-webp/9.webp",
+  "/game-logo-webp/10.webp",
+  "/game-logo-webp/11.webp",
+  "/game-logo-webp/12.webp",
+  "/game-logo-webp/13.webp",
+  "/game-logo-webp/14.webp",
+  "/game-logo-webp/15.webp",
+  "/game-logo-webp/16.webp",
+  "/game-logo-webp/17.webp",
+  "/game-logo-webp/18.webp",
+  "/game-logo-webp/19.webp",
+  "/game-logo-webp/20.webp",
+  "/game-logo-webp/21.webp",
+  "/game-logo-webp/22.webp",
+  "/game-logo-webp/23.webp",
+  "/game-logo-webp/24.webp",
+  "/game-logo-webp/25.webp",
+  "/game-logo-webp/26.webp"
+];
 
   return (
     <>
@@ -509,11 +507,8 @@ export default function Home() {
         <div className="background-overlay"></div>
       </div>
 
-      <div className="container-fluid  p-0">
-        <div className="container background p-0">
-          <Header />
-        </div>
-      </div>
+
+      <Header />
       <div className="container-fluid">
         <div className="container background p-2 px-4">
           <div className="row g-0 flex-wrap">
@@ -675,40 +670,41 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <div className="container-fluid">
+        <div className="container text-white py-4 rounded background">
+          <h1 className="text-lg sm:text-xl font-bold mb-6 bg-black p-3">
+            <span className="text-white mr-2 border-l-4 border-red-600 pl-2">
+              Weekly Games
+            </span>
+            <span className="text-danger fw-bold fst-italic ms-2">BEST</span>
+          </h1>
 
-      <div className="container text-white py-4 rounded background">
-        <h1 className="text-lg sm:text-xl font-bold mb-6 bg-black p-3">
-          <span className="text-white mr-2 border-l-4 border-red-600 pl-2">
-            Weekly Games
-          </span>
-          <span className="text-danger fw-bold fst-italic ms-2">BEST</span>
-        </h1>
-
-        <div className="d-flex flex-wrap  justify-content-center gap-6">
-          {WeeklyGames.map((src, index) => (
-            <div
-              key={index}
-              className="rounded bg-dark p-1 overflow-hidden m-1"
-              style={{
-                width: "80px",
-                height: "80px",
-                flex: "0 0 auto",
-              }}
-            >
-              <Image
-                src={src}
-                alt={`Game ${index + 1}`}
-                width={60}
-                height={60}
-                className="img-fluid rounded"
+          <div className="d-flex flex-wrap  justify-content-center gap-6">
+            {WeeklyGames.map((src, index) => (
+              <div
+                key={index}
+                className="rounded bg-dark p-1 overflow-hidden m-1 cursor-pointer"
                 style={{
-                  objectFit: "cover",
-                  width: "100%",
-                  height: "100%",
+                  width: "80px",
+                  height: "80px",
+                  flex: "0 0 auto",
                 }}
-              />
-            </div>
-          ))}
+              >
+                <Image
+                  src={src}
+                  alt={`Game ${index + 1}`}
+                  width={60}
+                  height={60}
+                  className="img-fluid rounded"
+                  style={{
+                    objectFit: "cover",
+                    width: "100%",
+                    height: "100%",
+                  }}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
