@@ -1,499 +1,203 @@
 // eslint-disable-next-line @next/next/no-img-element
 "use client";
 import React, { useEffect, useState } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import "../css/landing.css";
 import "../css/bootstrap.css";
 import "../css/style.css";
-import "../css/media.css";
-import "../js/popper.min.js";
 import Header from "./header/Header";
 import Footer from "./footer/Footer";
 import Image from "next/image";
 import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faChevronRight,
-  faChevronLeft,
-  faTrophy,
-  faAnchor,
-  faGears,
-  faPaperPlane,
-  faPeopleRoof,
-  faChartPie,
-  faClock,
-  faLayerGroup,
-  faCodeCompare,
-  faDiamond,
-  faHandHoldingHeart,
-  faUserPlus,
-  faArrowUpRightDots,
-  faParachuteBox,
-  faPeopleCarryBox,
-  faRankingStar,
-} from "@fortawesome/free-solid-svg-icons";
-import $ from "jquery";
-import { submitForm } from "@/utils/submitForm";
-import Swal from "sweetalert2";
 
 export default function Home() {
-  const [show, setShow] = useState(false);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [mobile, setPhoneNumber] = useState("");
-  const [message, setMessage] = useState("");
-  const [source, setSource] = useState("");
 
-  const handleApplyForInquiry = async (e: any) => {
-    e.preventDefault();
-    try {
-      await submitForm(
-        name,
-        email,
-        mobile,
-        "Gomzi consulting services",
-        message,
-        window.location.href
-      );
-
-      setName("");
-      setEmail("");
-      setPhoneNumber("");
-      setMessage("");
-      setSource("");
-      Swal.fire({
-        icon: "success",
-        title: "",
-        text: "Thank You for Connecting us. We will Contact You Soon.",
-        confirmButtonText: "OK",
-      });
-    } catch (error) {
-      console.error(error);
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "Something went wrong. Please try again later.",
-        confirmButtonText: "OK",
-      });
-    }
-    setShow(false);
-  };
-
-  function SampleNextArrow(props: any) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className="slider-button-right"
-        style={{ ...style, display: "block" }}
-        onClick={onClick}
-      >
-        <FontAwesomeIcon icon={faChevronRight} />
-      </div>
-    );
-  }
-
-  function SamplePrevArrow(props: any) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className="slider-button-left"
-        style={{ ...style, display: "block" }}
-        onClick={onClick}
-      >
-        <FontAwesomeIcon icon={faChevronLeft} />
-      </div>
-    );
-  }
-
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    arrows: false,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
-          arrows: true,
-          nextArrow: <SampleNextArrow />,
-          prevArrow: <SamplePrevArrow />,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: true,
-          nextArrow: <SampleNextArrow />,
-          prevArrow: <SamplePrevArrow />,
-        },
-      },
-    ],
-  };
-
-  const settings2 = {
-    dots: false,
-    fade: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    waitForAnimate: false,
-    autoplay: true,
-    autoplaySpeed: 4000,
-    arrows: false,
-  };
-
-  const settings3 = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 6,
-    slidesToScroll: 1,
-    autoplay: true,
-    arrows: false,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          initialSlide: 2,
-          arrows: true,
-          nextArrow: <SampleNextArrow />,
-          prevArrow: <SamplePrevArrow />,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: true,
-          nextArrow: <SampleNextArrow />,
-          prevArrow: <SamplePrevArrow />,
-        },
-      },
-    ],
-  };
-
-  const settings4 = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    autoplay: true,
-    arrows: false,
-    responsive: [
-      {
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          initialSlide: 2,
-          arrows: true,
-          nextArrow: <SampleNextArrow />,
-          prevArrow: <SamplePrevArrow />,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: true,
-          nextArrow: <SampleNextArrow />,
-          prevArrow: <SamplePrevArrow />,
-        },
-      },
-    ],
-  };
-  const CourseSpartans = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    // nextArrow: <SampleNextArrow />,
-    // prevArrow: <SamplePrevArrow />,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 2,
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
-
-  useEffect(() => {
-    $(document).ready(function () {
-      $(".content-box-1").click(function () {
-        $(".content-box-1").addClass("compnay-select-active");
-        $(
-          ".content-box-2, .content-box-3, .content-box-4, .content-box-5, .content-box-6"
-        ).removeClass("compnay-select-active");
-        $(".content-1").show();
-        $(".content-2, .content-3, .content-4, .content-5, .content-6").hide();
-      });
-      $(".content-box-2").click(function () {
-        $(".content-box-2").addClass("compnay-select-active");
-        $(
-          ".content-box-1, .content-box-3, .content-box-4, .content-box-5, .content-box-6"
-        ).removeClass("compnay-select-active");
-        $(".content-2").show();
-        $(".content-1, .content-3, .content-4, .content-5, .content-6").hide();
-      });
-      $(".content-box-3").click(function () {
-        $(".content-box-3").addClass("compnay-select-active");
-        $(
-          ".content-box-2, .content-box-1, .content-box-4, .content-box-5"
-        ).removeClass("compnay-select-active");
-        $(".content-3").show();
-        $(".content-2, .content-1, .content-4, .content-5, .content-6").hide();
-      });
-      $(".content-box-4").click(function () {
-        $(".content-box-4").addClass("compnay-select-active");
-        $(
-          ".content-box-2, .content-box-3, .content-box-1, .content-box-5, .content-box-6"
-        ).removeClass("compnay-select-active");
-        $(".content-4").show();
-        $(".content-2, .content-3, .content-1, .content-5, .content-6").hide();
-      });
-      $(".content-box-5").click(function () {
-        $(".content-box-5").addClass("compnay-select-active");
-        $(
-          ".content-box-2, .content-box-3, .content-box-1, .content-box-4, .content-box-6"
-        ).removeClass("compnay-select-active");
-        $(".content-5").show();
-        $(".content-2, .content-3, .content-1, .content-4, .content-6").hide();
-      });
-      $(".content-box-6").click(function () {
-        $(".content-box-6").addClass("compnay-select-active");
-        $(
-          ".content-box-2, .content-box-3, .content-box-1, .content-box-4, .content-box-5"
-        ).removeClass("compnay-select-active");
-        $(".content-6").show();
-        $(".content-2, .content-3, .content-1, .content-5, .content-4").hide();
-      });
-    });
-  }, []);
-
-  // const handleSubmit = (event: any) => {
-  //   event.preventDefault();
-  //   submitForm(event);
-  // };
-  const values = [
-    {
-      title: "Commitment to Excellence",
-      iccon: { faDiamond },
-      description: `We strive for the highest standards in everything we do. Our dedication to excellence drives us to deliver top-quality solutions and services, ensuring that our clients achieve their goals with precision and efficiency.`,
-    },
-    {
-      title: "Customer-Centric Approach",
-      iccon: { faDiamond },
-      description: `Our clients are at the heart of our business. We listen to your needs, understand your challenges, and tailor our solutions to provide exceptional value and support. Your satisfaction and success are our top priorities.`,
-    },
-    {
-      title: "Innovation and Growth",
-      iccon: { faDiamond },
-      description: `We embrace innovation to stay ahead of industry trends and continuously improve our offerings. By fostering a culture of creativity and growth, we ensure that our solutions evolve to meet the ever-changing needs of the fitness industry.`,
-    },
-    {
-      title: "Integrity and Transparency",
-      iccon: { faDiamond },
-      description: `We conduct our business with the utmost integrity and transparency. We believe in honest communication, ethical practices, and building trust with our clients and partners. Our transparent approach ensures that you always know where you stand.`,
-    },
-    {
-      title: "Collaboration and Teamwork",
-      iccon: { faDiamond },
-      description: `We believe in the power of collaboration and teamwork. Our diverse team works together harmoniously to achieve common goals, leveraging each member’s expertise and perspectives to drive success.`,
-    },
-    {
-      title: "Passion for Fitness",
-      iccon: { faDiamond },
-      description: `Our passion for fitness and wellness fuels our mission to support and enhance gym operations. We are dedicated to helping fitness professionals thrive and make a positive impact on their communities.`,
-    },
-  ];
-
-  const games = [
-    {
-      title: "Help Vikings in love affairs!",
-      link: "https://www.tiguandesign.com/gameleon/dark/help-vikings-in-love-affairs/",
-      image:
-        "/images/games/https___apptrigger.com_files_2020_10_Gears-5-302x180.jpg",
-    },
-    {
-      title: "Our friends are coming back again!",
-      link: "https://www.tiguandesign.com/gameleon/dark/our-friends-are-coming-back-again/",
-      image: "/images/games/outridersutsettestil_3280183b-302x180.jpg",
-    },
-    {
-      title: "A great theme for your gaming site",
-      link: "https://www.tiguandesign.com/gameleon/dark/a-great-theme-for-your-gaming-site/",
-      image: "/images/games/The-Ascent-Keyart-LANDSCAPE-Logo-302x180.jpg",
-    },
-    {
-      title: "I can take you as far as Anchorhead",
-      link: "https://www.tiguandesign.com/gameleon/dark/i-can-take-you-as-far-as-anchorhead/",
-      image:
-        "/images/games/11551431038icp1zq8vwyilktwlu2cizwmzgrlscovzt98mmdhbtvhchclsdiq7z6yiiwiimlwt6luk7auwpbt8bicin-3-610x349.jpg",
-    },
-  ];
 
   const highlights = [
     {
-      title: "Fortnite Food Truck Locations",
-      category: "Arcade",
-      image:
-        "/images/games/Fortnite_untitled-page_10StW_Evergreens_Red_NewsHeader-1920x1080-6d3fdd4fdabd9e97336bdd012776eb05f5e91ce9-302x180.jpg",
+      title: "Brick Out",
+      image: "/game-logo-webp/27.webp",
+      link: "/game-page?gamename=brick-out",
+    },
+    {
+      title: "Duck Hunter",
+      image: "/game-logo-webp/28.webp",
       link: "/game-page",
     },
     {
-      title: "The Ability to Destroy a Car",
-      category: "Arcade",
-      image:
-        "/images/games/11551431038icp1zq8vwyilktwlu2cizwmzgrlscovzt98mmdhbtvhchclsdiq7z6yiiwiimlwt6luk7auwpbt8bicin-3-610x349.jpg",
+      title: "Animal Crush",
+      image: "/game-logo-webp/29.webp",
       link: "/game-page",
     },
     {
-      title: "A Rune 2 Patch is Finally Coming Now",
-      category: "Arcade",
-      image:
-        "/images/games/11551431038icp1zq8vwyilktwlu2cizwmzgrlscovzt98mmdhbtvhchclsdiq7z6yiiwiimlwt6luk7auwpbt8bicin-3-610x349.jpg",
-      link: "/game-page/",
-    },
-    {
-      title: "Epic’s Weekly Free Games",
-      category: "Arcade",
-      image:
-        "/images/games/11551431038icp1zq8vwyilktwlu2cizwmzgrlscovzt98mmdhbtvhchclsdiq7z6yiiwiimlwt6luk7auwpbt8bicin-3-610x349.jpg",
+      title: "Happy Chef Bubble Shooter",
+      image: "/game-logo-webp/30.webp",
       link: "/game-page",
     },
+    {
+      title: "Great Air Battles",
+      image: "/game-logo-webp/31.webp",
+      link: "/game-page",
+    },
+    {
+      title: "Plumber",
+      image: "/game-logo-webp/32.webp",
+      link: "/game-page",
+    },
+    {
+      title: "Professor Bubble",
+      image: "/game-logo-webp/33.webp",
+      link: "/game-page",
+    },
+    {
+      title: "Gold Miner Jack",
+      image: "/game-logo-webp/34.webp",
+      link: "/game-page",
+    },
+    {
+      title: "Tank War",
+      image: "/game-logo-webp/35.webp",
+      link: "/game-page",
+    },
+    {
+      title: "Stick Panda",
+      image: "/game-logo-webp/36.webp",
+      link: "/game-page",
+    },
+    {
+      title: "Stack Jump",
+      image: "/game-logo-webp/37.webp",
+      link: "/game-page",
+    },
+    {
+      title: "Crazy Runner",
+      image: "/game-logo-webp/38.webp",
+      link: "/game-page",
+    },
+    {
+      title: "Fashion Dress Up",
+      image: "/game-logo-webp/39.webp",
+      link: "/game-page",
+    },
+    {
+      title: "Super Cowboy Run",
+      image: "/game-logo-webp/40.webp",
+      link: "/game-page",
+    },
+    {
+      title: "Quick Dice",
+      image: "/game-logo-webp/41.webp",
+      link: "/game-page",
+    },
+    {
+      title: "Stick Soldier",
+      image: "/game-logo-webp/42.webp",
+      link: "/game-page",
+    },
+    {
+      title: "Monsters",
+      image: "/game-logo-webp/43.webp",
+      link: "/game-page",
+    },
+    {
+      title: "Flappy Ball",
+      image: "/game-logo-webp/44.webp",
+      link: "/game-page",
+    },
+    {
+      title: "Car Physics",
+      image: "/game-logo-webp/45.webp",
+      link: "/game-page",
+    },
+    {
+      title: "Girl Dress Up",
+      image: "/game-logo-webp/46.webp",
+      link: "/game-page",
+    },
+    {
+      title: "Viking Escape",
+      image: "/game-logo-webp/47.webp",
+      link: "/game-page",
+    },
+    {
+      title: "Pops Billiards",
+      image: "/game-logo-webp/48.webp",
+      link: "/game-page",
+    },
+    {
+      title: "Cars",
+      image: "/game-logo-webp/49.webp",
+      link: "/game-page",
+    },
+    {
+      title: "Tank",
+      image: "/game-logo-webp/50.webp",
+      link: "/game-page",
+    }
   ];
+
 
   const posts = [
-    {
-      title: "The New Pop Culture Optimism",
-      date: "Feb 15, 2021",
-      image: "/images/games/yahttvis7wy31-302x180.jpg",
-      link: "#",
-    },
-    {
-      title: "Game of the Year 2021",
-      date: "Oct 14, 2020",
-      image: "/images/games/yahttvis7wy31-302x180.jpg",
-      link: "#",
-    },
-    {
-      title: "My Favorite Hotel Game",
-      date: "Oct 14, 2020",
-      image: "/images/games/yahttvis7wy31-302x180.jpg",
-      link: "#",
-    },
-    {
-      title: "One Side of This Galaxy",
-      date: "Oct 14, 2020",
-      image: "/images/games/yahttvis7wy31-302x180.jpg",
-      link: "#",
-    },
-    {
-      title: "May the Force Be With You",
-      date: "Jul 14, 2020",
-      image: "/images/games/yahttvis7wy31-302x180.jpg",
-      link: "#",
-    },
-    {
-      title: "Doom Eternal Has a New Trailer",
-      date: "Jun 25, 2020",
-      image: "/images/games/yahttvis7wy31-302x180.jpg",
-      link: "#",
-    },
-  ];
+  {
+    title: "Easter Memory",
+    date: "Feb 15, 2021",
+    image: "/game-logo-webp/21.webp",
+    link: "/game-page?gamename=easter-memory",
+  },
+  {
+    title: "Forrest Brothers",
+    date: "Oct 14, 2020",
+    image: "/game-logo-webp/22.webp",
+    link: "/game-page?gamename=forrest-brothers",
+  },
+  {
+    title: "Tank Defender",
+    date: "Oct 14, 2020",
+    image: "/game-logo-webp/23.webp",
+    link: "/game-page?gamename=tank-defender",
+  },
+  {
+    title: "Angry Cats",
+    date: "Oct 14, 2020",
+    image: "/game-logo-webp/24.webp",
+    link: "/game-page?gamename=angry-cats",
+  },
+  {
+    title: "Balloon Paradise",
+    date: "Jul 14, 2020",
+    image: "/game-logo-webp/25.webp",
+    link: "/game-page?gamename=balloon-paradise",
+  },
+  {
+    title: "Super Pongoal",
+    date: "Jun 25, 2020",
+    image: "/game-logo-webp/26.webp",
+    link: "/game-page?gamename=super-pongoal",
+  },
+];
+
 
  const WeeklyGames = [
-  "/game-logo-webp/1.webp",
-  "/game-logo-webp/2.webp",
-  "/game-logo-webp/3.webp",
-  "/game-logo-webp/4.webp",
-  "/game-logo-webp/5.webp",
-  "/game-logo-webp/6.webp",
-  "/game-logo-webp/7.webp",
-  "/game-logo-webp/8.webp",
-  "/game-logo-webp/9.webp",
-  "/game-logo-webp/10.webp",
-  "/game-logo-webp/11.webp",
-  "/game-logo-webp/12.webp",
-  "/game-logo-webp/13.webp",
-  "/game-logo-webp/14.webp",
-  "/game-logo-webp/15.webp",
-  "/game-logo-webp/16.webp",
-  "/game-logo-webp/17.webp",
-  "/game-logo-webp/18.webp",
-  "/game-logo-webp/19.webp",
-  "/game-logo-webp/20.webp",
-  "/game-logo-webp/21.webp",
-  "/game-logo-webp/22.webp",
-  "/game-logo-webp/23.webp",
-  "/game-logo-webp/24.webp",
-  "/game-logo-webp/25.webp",
-  "/game-logo-webp/26.webp"
+  { title: "Traffic Racer", image: "/game-logo-webp/1.webp", link: "/game-page?gamename=traffic-racer" },
+  { title: "Brick Breaker Unicorn", image: "/game-logo-webp/2.webp", link: "/game-page?gamename=brick-breaker-unicorn" },
+  { title: "Air Warfare", image: "/game-logo-webp/3.webp", link: "/game-page?gamename=air-warfare" },
+  { title: "Ninja Run", image: "/game-logo-webp/4.webp", link: "/game-page?gamename=ninja-run" },
+  { title: "Gold Miner", image: "/game-logo-webp/5.webp", link: "/game-page?gamename=gold-miner" },
+  { title: "Fruit Slasher", image: "/game-logo-webp/6.webp", link: "/game-page?gamename=fruit-slasher" },
+  { title: "Stick Monkey", image: "/game-logo-webp/7.webp", link: "/game-page?gamename=stick-monkey" },
+  { title: "Space Purge", image: "/game-logo-webp/8.webp", link: "/game-page?gamename=space-purge" },
+  { title: "Shoot Robbers", image: "/game-logo-webp/9.webp", link: "/game-page?gamename=shoot-robbers" },
+  { title: "Splishy Fish", image: "/game-logo-webp/10.webp", link: "/game-page?gamename=splishy-fish" },
+  { title: "Speed Racer", image: "/game-logo-webp/11.webp", link: "/game-page?gamename=speed-racer" },
+  { title: "Duck Shooter", image: "/game-logo-webp/12.webp", link: "/game-page?gamename=duck-shooter" },
+  { title: "Traffic", image: "/game-logo-webp/13.webp", link: "/game-page?gamename=traffic" },
+  { title: "Kingdom Defense", image: "/game-logo-webp/14.webp", link: "/game-page?gamename=kingdom-defense" },
+  { title: "Candy Super Lines", image: "/game-logo-webp/15.webp", link: "/game-page?gamename=candy-super-lines" },
+  { title: "Fruit Snake", image: "/game-logo-webp/16.webp", link: "/game-page?gamename=fruit-snake" },
+  { title: "Super Color Lines", image: "/game-logo-webp/17.webp", link: "/game-page?gamename=super-color-lines" },
+  { title: "Pool 8 Ball", image: "/game-logo-webp/18.webp", link: "/game-page?gamename=pool-8-ball" },
+  { title: "Mummy Candies", image: "/game-logo-webp/19.webp", link: "/game-page?gamename=mummy-candies" },
+  { title: "Mad Fish", image: "/game-logo-webp/20.webp", link: "/game-page?gamename=mad-fish" },
 ];
+
 
   return (
     <>
@@ -503,69 +207,14 @@ export default function Home() {
       />
 
       <div className="background-wrapper">
-        <img src="/images/nature.jpg" alt="" className="background-image" />
-        <div className="background-overlay"></div>
+        <img src="/images/background.png" alt="" className="background-image" />
       </div>
 
 
       <Header />
-      <div className="container-fluid">
-        <div className="container background p-2 px-4">
-          <div className="row g-0 flex-wrap">
-            <div className="col-lg-8 col-12 p-0">
-              <div className={`card large`}>
-                <Image
-                  src={"/images/games/6-610x420.png"}
-                  fill
-                  alt={"6-610x420.png"}
-                  className={"image"}
-                />
-                <div className={"overlay"}>
-                  <h1 className="text-lg md:text-xl text-white font-bold uppercase">
-                    Mirror’s Edge refines the game
-                  </h1>
-                </div>
-              </div>
-            </div>
 
-            <div className="col-lg-4 col-12">
-              <div className="row g-0 p-0">
-                {games.map((game, index) => (
-                  <div key={index} className="col-6 p-0">
-                    <div
-                      className="card position-relative"
-                      style={{ height: "200px", overflow: "hidden" }}
-                    >
-                      <Image
-                        src={game.image}
-                        alt={game.title}
-                        fill
-                        style={{ objectFit: "cover" }}
-                      />
-                      <div
-                        style={{
-                          position: "absolute",
-                          bottom: 0,
-                          width: "100%",
-                          background: "rgba(0, 0, 0, 0.6)",
-                          color: "white",
-                          padding: "5px",
-                          fontSize: "0.9rem",
-                        }}
-                      >
-                        <p className="mb-0">{game.title}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="text-white container-fluid ">
-        <div className="container p-3 mx-auto px-4 background">
+      <div className=" container-fluid text-white ">
+        <div className="container p-3 mx-auto  background" >
           <div className="flex justify-between items-center mb-6 bg-black p-3">
             <h1 className="text-lg sm:text-xl font-bold">
               <span className="text-white mr-2 border-l-4 border-red-600 pl-2">
@@ -573,56 +222,44 @@ export default function Home() {
               </span>
               <span className="text-danger fw-bold fst-italic ms-2">Top</span>
             </h1>
-            <Link href="https://www.tiguandesign.com/gameleon/dark/category/arcade/">
+            <Link href="">
               <div className="bg-red-600 text-white px-3 py-1 text-xs cursor-pointer font-semibold uppercase px-4 py-3">
                 view all
               </div>
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 ">
-            {highlights.map((item) => (
-              <div
-                key={item.title}
-                className="relative group overflow-hidden bg-dark p-2"
-              >
-                <Link href={item.link}>
-                  <div className="relative w-full h-[220px] sm:h-[200px] md:h-[240px]">
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      layout="fill"
-                      objectFit="cover"
-                      className="transition-transform duration-300"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
-                    <div className="absolute bottom-4 left-4 z-10">
-                      <p className="text-xm  font-semibold text-white uppercase">
-                        {item.category}
-                      </p>
-                      <h2 className="text-base sm:text-lg font-bold uppercase text-white leading-tight">
-                        {item.title}
-                      </h2>
-                    </div>
-                    <div className="absolute bottom-4 right-4 z-10 ">
-                      <button className="flex items-center bg-[#1a1a1a] text-white text-sm font-bold uppercase hover:bg-red-500  transition-colors duration-100">
-                        <span className="px-4" style={{ fontFamily: "roboto" }}>
-                          Play
-                        </span>
-                        <span className="w-px h-12 bg-white/40"></span>
-                        <span className="px-4 text-3xl">&#8250;</span>{" "}
-                        {/* › character */}
-                      </button>
-                    </div>
+          <div className="container">
+            <div className="row">
+              {highlights.map((item, index) => (
+                <div key={item.title || index} className="col-12 col-sm-6 col-md-2 mb-4">
+                  <div className="game-card position-relative overflow-hidden bg-dark p-1">
+                    <Link href={item.link}>
+                      <div className="custom-card-img-wrapper position-relative w-100">
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="transition-transform object-fit-cover w-100 h-100"
+                        />
+                        {/* <div className="custom-gradient-overlay position-absolute top-0 start-0 w-100 h-100"></div> */}
+                        <div className="game-title-overlay d-flex align-items-center justify-content-center text-white">
+                          <h4 className="m-0">{item.title}</h4>
+                        </div>
+
+                        <div className="position-absolute bottom-0 start-0 p-3 z-2">
+                          {/* <h2 className="text-white text-uppercase fw-bold h6 ">{item.title}</h2> */}
+                        </div>
+                      </div>
+                    </Link>
                   </div>
-                </Link>
-              </div>
-            ))}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="text-white container-fluid  ">
+      <div className="container-fluid  text-white">
         <div className="container py-3 mx-auto px-4 background">
           {/* Header */}
           <div className="flex justify-between items-center mb-6 bg-black p-3">
@@ -633,7 +270,7 @@ export default function Home() {
               <span className="text-danger fw-bold fst-italic ms-2">HOT</span>
             </h1>
             <a
-              href="https://www.tiguandesign.com/gameleon/dark/category/defense/"
+              href=""
               className="bg-red-600 hover:bg-red-700 text-white text-xs px-4 py-3 uppercase font-bold"
             >
               View All
@@ -641,35 +278,35 @@ export default function Home() {
           </div>
 
           {/* Cards Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="row">
             {posts.map((post, index) => (
-              <div
-                key={index}
-                className="bg-gray-900 bg-dark p-2 rounded overflow-hidden shadow-md cursor-pointer"
-              >
-                <a href={post.link}>
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    className="w-full h-48 object-cover"
-                  />
-                </a>
-                <div className="p-3">
-                  <h2 className="text-lg font-semibold mb-1 hover:text-red-400 transition duration-200">
-                    <a href={post.link} className="text-white">
-                      {post.title}
-                    </a>
-                  </h2>
-                  <p className="text-sm" style={{ color: "#f63a3a" }}>
-                    {post.date}
-                    <span className="text-gray-400 ml-2">- No Comments</span>
-                  </p>
+              <div key={index} className="col-12 col-sm-6 col-lg-2">
+                <div className="bg-dark p-1 rounded overflow-hidden shadow cursor-pointer">
+                  <a href={post.link}>
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      className="w-100 h-100 object-fit-cover"
+                    />
+                  </a>
+                  <div className="p-1">
+                    <h6 className=" mb-1">
+                      <a href={post.link} className="text-white text-decoration-none hover:text-danger">
+                        {post.title}
+                      </a>
+                    </h6>
+                    <p className="text-danger small mb-0">
+                      {post.date}
+                      <span className="text-secondary ms-2">- No Comments</span>
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </div>
+
       <div className="container-fluid">
         <div className="container text-white py-4 rounded background">
           <h1 className="text-lg sm:text-xl font-bold mb-6 bg-black p-3">
@@ -679,29 +316,24 @@ export default function Home() {
             <span className="text-danger fw-bold fst-italic ms-2">BEST</span>
           </h1>
 
-          <div className="d-flex flex-wrap  justify-content-center gap-6">
-            {WeeklyGames.map((src, index) => (
+          <div className="row d-flex flex-wrap  justify-content-center gap-6">
+            {WeeklyGames.map((game, index) => (
               <div
                 key={index}
-                className="rounded bg-dark p-1 overflow-hidden m-1 cursor-pointer"
-                style={{
-                  width: "80px",
-                  height: "80px",
-                  flex: "0 0 auto",
-                }}
+                className="col-12 col-lg-1 col-md-1 rounded bg-dark p-1 overflow-hidden  cursor-pointer"
               >
-                <Image
-                  src={src}
-                  alt={`Game ${index + 1}`}
-                  width={60}
-                  height={60}
-                  className="img-fluid rounded"
-                  style={{
-                    objectFit: "cover",
-                    width: "100%",
-                    height: "100%",
-                  }}
-                />
+                <Link href={game.link}>
+                  <img
+                    src={game.image}
+                    alt={`Game ${index + 1}`}
+                    className="img-fluid rounded"
+                    style={{
+                      objectFit: "cover",
+                      width: "100%",
+                      height: "100%",
+                    }}
+                  />
+                </Link>
               </div>
             ))}
           </div>

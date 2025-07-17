@@ -4,11 +4,10 @@ import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import Image from "next/image";
 
-import "../../css/landing.css";
+// import "../../css/landing.css";
 import "../../css/bootstrap.css";
 import "../../css/style.css";
-import "../../css/media.css";
-import "../../js/popper.min.js";
+import { Link } from "react-scroll";
 
 export default function GamePage() {
   const iframeRef = useRef<HTMLIFrameElement>(null);
@@ -16,14 +15,14 @@ export default function GamePage() {
   const [showModal, setShowModal] = useState(false);
 
   const handleOpenModal = () => {
-  setShowModal(true);
-  document.body.classList.add("no-scroll");
-};
+    setShowModal(true);
+    document.body.classList.add("no-scroll");
+  };
 
-const handleCloseModal = () => {
-  setShowModal(false);
-  document.body.classList.remove("no-scroll");
-};
+  const handleCloseModal = () => {
+    setShowModal(false);
+    document.body.classList.remove("no-scroll");
+  };
 
 
   const handleFullscreen = () => {
@@ -40,77 +39,59 @@ const handleCloseModal = () => {
   };
 
   const relatedGames = [
-    {
-      title: "NEW BATTLEFIELD SEASON STARTS SOON",
-      date: "Feb 25, 2021",
-      likes: 4,
-      plays: 4974,
-      image: "/images/games/yahttvis7wy31-302x180.jpg",
-    },
-    {
-      title: "OUR HIGHEST REVIEW SCORES OF 2020",
-      date: "Feb 25, 2021",
-      likes: 10,
-      plays: 4980,
-      image: "/images/games/yahttvis7wy31-302x180.jpg",
-    },
-    {
-      title: "THIS GAME WILL KEEP YOU UP ALL NIGHT",
-      date: "Feb 25, 2021",
-      likes: 6,
-      plays: 5001,
-      image: "/images/games/yahttvis7wy31-302x180.jpg",
-    },
-    {
-      title: "NINJA’S OFFICIAL FORTNITE SKIN",
-      date: "Feb 25, 2021",
-      likes: 13,
-      plays: 2148,
-      image: "/images/games/yahttvis7wy31-302x180.jpg",
-    },
-
-    {
-      title: "THIS GAME WILL KEEP YOU UP ALL NIGHT",
-      date: "Feb 25, 2021",
-      likes: 6,
-      plays: 5001,
-      image: "/images/games/yahttvis7wy31-302x180.jpg",
-    },
-    {
-      title: "NINJA’S OFFICIAL FORTNITE SKIN",
-      date: "Feb 25, 2021",
-      likes: 13,
-      plays: 2148,
-      image: "/images/games/yahttvis7wy31-302x180.jpg",
-    },
+    { title: "Traffic Racer", image: "/game-logo-webp/1.webp" },
+    { title: "Brick Breaker Unicorn", image: "/game-logo-webp/2.webp" },
+    { title: "Air Warfare", image: "/game-logo-webp/3.webp" },
+    { title: "Ninja Run", image: "/game-logo-webp/4.webp" },
+    { title: "Gold Miner", image: "/game-logo-webp/5.webp" },
+    { title: "Fruit Slasher", image: "/game-logo-webp/6.webp" },
+    { title: "Stick Monkey", image: "/game-logo-webp/7.webp" },
+    { title: "Space Purge", image: "/game-logo-webp/8.webp" },
+    { title: "Shoot Robbers", image: "/game-logo-webp/9.webp" },
+    { title: "Splishy Fish", image: "/game-logo-webp/10.webp" },
+    { title: "Speed Racer", image: "/game-logo-webp/11.webp" },
+    { title: "Duck Shooter", image: "/game-logo-webp/12.webp" },
+    { title: "Traffic", image: "/game-logo-webp/13.webp" },
+    { title: "Kingdom Defense", image: "/game-logo-webp/14.webp" },
+    { title: "Candy Super Lines", image: "/game-logo-webp/15.webp" },
+    { title: "Fruit Snake", image: "/game-logo-webp/16.webp" },
+    { title: "Super Color Lines", image: "/game-logo-webp/17.webp" },
+    { title: "Pool 8 Ball", image: "/game-logo-webp/18.webp" },
+    { title: "Mummy Candies", image: "/game-logo-webp/19.webp" },
+    { title: "Mad Fish", image: "/game-logo-webp/20.webp" },
+    { title: "Easter Memory", image: "/game-logo-webp/21.webp" },
+    { title: "Forest Brothers", image: "/game-logo-webp/22.webp" },
+    { title: "Tank Defender", image: "/game-logo-webp/23.webp" },
+    { title: "Angry Cats", image: "/game-logo-webp/24.webp" }
   ];
+
 
   return (
     <div>
-      <div className="container-fulid ">
-        <div className="container p-0 background">
-        <Header />
-        </div>
+      <Header/>
+
+      <div className="background-wrapper">
+        <img src="/images/background.png" alt="" className="background-image" />
       </div>
 
-      <div className="container-fluid mb-3">
-        <div className="container p-0 mx-auto">
-          <div className="bg-[#1a1a1a] text-white min-h-screen p-4 flex flex-col">
-            <div className="flex flex-col justify-center sm:flex-row sm:justify-between sm:items-center border-b border-gray-700 gap-2 p-2">
-              <h1 className="text-lg sm:text-xl font-bold">
-                <span className="text-white mr-2 border-l-4 border-red-600 pl-2">
-                  Play Traffic Racer Game !
-                </span>
-              </h1>
-              <div className="flex gap-3">
+      <div className="container-fluid">
+        <div className="container background p-0 mx-auto">
+          <div className=" text-white p-3 flex flex-col">
+            <div className="flex flex-col justify-center sm:flex-row sm:justify-between sm:items-center gap-2 py-2  bg-black">
+              <div className="flex justify-center items-center p-3">
+                <h1 className="text-lg sm:text-xl font-bold m-0">
+                  <span className="text-white mr-2 border-l-4 border-red-600 pl-2">Play Traffic Racer Game !</span>
+                </h1>
+              </div>
+              <div className="flex justify-content-center gap-3">
                 <button
-                  className="bg-red-600 text-white p-3 rounded-sm flex items-center gap-2 text-sm self-start sm:self-auto"
+                  className="bg-red-600 text-white p-2 rounded-sm flex items-center gap-2 text-sm self-start sm:self-auto"
                   onClick={handleOpenModal}
                 >
                   <i className="fas fa-gamepad"></i> OPEN GAME
                 </button>
                 <button
-                  className="bg-red-600 text-white p-3 rounded-sm flex items-center gap-2 text-sm self-start sm:self-auto"
+                  className="bg-red-600 text-white p-2 mr-1 rounded-sm flex items-center gap-2 text-sm self-start sm:self-auto"
                   onClick={handleFullscreen}
                 >
                   <i className="fas fa-expand-arrows-alt"></i> PLAY FULL SCREEN
@@ -118,10 +99,9 @@ const handleCloseModal = () => {
               </div>
             </div>
 
-            <div className="flex-grow flex justify-center items-center py-4 px-2">
+            <div className="p-5 flex justify-center items-center">
               <div
-                className="w-full sm:max-w-[960px] bg-black rounded overflow-hidden shadow-lg relative"
-                style={{ aspectRatio: "16 / 9" }}
+                className="w-full sm:max-w-[960px] bg-black rounded overflow-hidden shadow-lg relative aspectRatio"
                 onClick={handleOpenModal}
               >
                 <iframe
@@ -140,16 +120,6 @@ const handleCloseModal = () => {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row justify-between items-center border-t border-gray-700 pt-4 gap-2 text-xs sm:text-sm">
-              <div className="flex items-center gap-1 text-white cursor-pointer">
-                <i className="fas fa-chevron-left"></i>
-                <span className="font-semibold uppercase">Previous Game</span>
-              </div>
-              <div className="flex items-center gap-1 text-white cursor-pointer">
-                <span className="font-semibold uppercase">Next Game</span>
-                <i className="fas fa-chevron-right"></i>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -179,36 +149,35 @@ const handleCloseModal = () => {
         </div>
       )}
 
-      <div
-        className="container text-white py-5"
-        style={{ backgroundColor: "#1a1a1a" }}
-      >
-        <div className="row">
-          {/* Related Games */}
-          <div className="col-12">
-             <h1 className="text-lg sm:text-xl font-bold">
-                <span className="text-white mr-2 border-l-4 border-red-600 pl-2">Related Games</span>
-              </h1>
-            <div className="row g-3">
-              {relatedGames.map((game, idx) => (
-                <div className="col-12 col-md-4 my-2 cursor-pointer" key={idx}>
-                  <div className="bg-dark rounded p-2 h-100">
-                    <Image
-                      src={game.image}
-                      alt={game.title}
-                      width={600}
-                      height={300}
-                      className="img-fluid w-100 rounded"
-                      style={{ objectFit: "cover", height: "200px" }}
-                    />
-                    <div className="fw-bold mt-2">{game.title}</div>
-                    <div className="text-muted small">
-                      <span className="text-danger">{game.date}</span> | ❤️{" "}
-                      {game.likes} Likes | 🏆 {game.plays} Plays
+      <div className="container-fluid">
+        <div
+          className="container text-white background p-3 "
+
+        >
+          <div className="row border-b border-gray-700">
+            {/* Related Games */}
+            <div className="col-12">
+              <div className="flex justify-between items-center mb-6 bg-black p-3">
+                <h1 className="text-lg sm:text-xl font-bold m-0">
+                  <span className="text-white mr-2 border-l-4 border-red-600 pl-2 ">Related Games</span>
+                </h1>
+              </div>
+              <div className="row g-3">
+                {relatedGames.map((game, idx) => (
+                  <div className="col-12 col-sm-6 col-md-3 mb-4 cursor-pointer" key={idx}>
+                    <div className="game-card position-relative rounded overflow-hidden">
+                      <img
+                        src={game.image}
+                        alt={game.title}
+                        className="img-fluid w-100 h-100 rounded"
+                      />
+                      <div className="game-title-overlay d-flex align-items-center justify-content-center text-white">
+                        <h4 className="m-0">{game.title}</h4>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>

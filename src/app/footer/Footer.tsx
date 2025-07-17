@@ -5,63 +5,9 @@ import "bootstrap/dist/css/bootstrap.css";
 import "../globals.css";
 import "../../css/bootstrap.css";
 import "../../css/style.css";
-import "../../css/media.css";
 import "../../css/all.min.css";
-import "../../js/popper.min.js";
-import { useEffect } from "react";
-import Image from "next/image";
-import $ from "jquery";
-import Link from "next/link";
 
 export default function Footer() {
-  function openside() {
-    var demoElement = document.getElementById("demo");
-    if (demoElement) {
-      demoElement.style.width = "100%";
-    }
-  }
-
-  function sideclose() {
-    var demoElement = document.getElementById("demo");
-    if (demoElement) {
-      demoElement.style.width = "0px";
-    }
-  }
-  useEffect(() => {
-    $(function () {
-      //Scroll event
-      $(window).scroll(function () {
-        var scrolled: any = $(window).scrollTop();
-        if (scrolled > 200) $(".go-top").fadeIn("slow");
-        if (scrolled < 200) $(".go-top").fadeOut("slow");
-      });
-
-      //Click event
-      $(".go-top").click(function () {
-        $("html, body").animate({ scrollTop: "0" }, 500);
-      });
-    });
-    $(function () {
-      // Scroll event
-      $(window).scroll(function () {
-        var scrolled: any = $(window).scrollTop();
-        if (scrolled > 100) {
-          $(".floting-btn, .floting-w-btn").fadeIn("slow");
-        }
-        if (scrolled < 100) {
-          $(".floting-btn, .floting-w-btn").fadeOut("slow");
-        }
-      });
-
-      // Click event
-      $(".floting-btn, .floting-w-btn").click(function () {
-        $("html, body").animate({ scrollTop: "0" }, 100);
-      });
-    });
-  }, []);
-
-  // footer
-
   const tags = [
     "ARCADE",
     "HTML5",
@@ -98,11 +44,11 @@ export default function Footer() {
           <div className="row">
             <div className="col-lg-4 mb-4">
               <h1 className="fw-bold mb-3" style={{ fontSize: "2.5rem" }}>
-                <span className="text-danger">GAME</span>
-                <span className="text-white">LEON</span>
+                <span className="text-danger">Twino</span>
+                <span className="text-white">Game</span>
               </h1>
               <p className="text-muted">
-                Gameleon is a <strong>WordPress arcade theme</strong> for online
+                TwinoGamez is a <strong>WordPress arcade theme</strong> for online
                 games, gaming, HTML5 games, magazine, newspaper, reviews or
                 blogging site.
               </p>

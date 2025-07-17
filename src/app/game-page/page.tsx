@@ -3,12 +3,12 @@ import Script from "next/script";
 import GamePage from "./game-page";
 
 export const metadata: Metadata = {
-  title: "Gomzi Consultants Services - Business Consulting Services",
+  title: "TwinoGamez | Game Page",
   description:
-    "Takshak Management Consultants provides expert consulting services to help businesses improve their efficiency, productivity, and profitability. Our team of experienced consultants specializes in strategic, operations, financial, marketing, and technology consulting. Contact us today to learn how we can help you achieve your business goals.",
+    "TwinoGamez is a WordPress arcade theme for online games, gaming, HTML5 games, magazine, newspaper, reviews or blogging site.",
 };
 
-export default function GomziConsultingPage() {
+export default function TwinoGamez() {
   return (
     <>
       <Script

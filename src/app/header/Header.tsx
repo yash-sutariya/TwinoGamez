@@ -1,11 +1,8 @@
 "use client";
-
 import "bootstrap/dist/css/bootstrap.css";
 import "../globals.css";
 import "../../css/bootstrap.css";
 import "../../css/style.css";
-import "../../css/media.css";
-import "../../js/popper.min.js";
 import { useState } from "react";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
@@ -15,14 +12,14 @@ export default function Header({ logoURL, mobileLogoURL, altLogo }: any) {
   return (
     <header className="shadow-md w-full container-fluid">
       <div className="container background">
-        <div className="header-inner  w-auto h-auto flex flex-col sm:flex-row items-center justify-between mx-auto p-3">
+        <div className="header-inner  w-auto h-auto flex flex-col sm:flex-row items-center justify-between">
           {/* Logo */}
           <div
             id="logo"
             className="w-full sm:w-auto  flex justify-center items-center sm:justify-center"
           >
             <a
-              href="https://www.tiguandesign.com/gameleon/dark/"
+              href="/"
               className="flex justify-center"
             >
               <img
@@ -33,6 +30,12 @@ export default function Header({ logoURL, mobileLogoURL, altLogo }: any) {
                 title="Arcade Theme"
                 className="h-100"
               />
+              {/* <img
+                src="/images/games/twino-logo.png"
+                alt="Arcade Theme"
+                title="Arcade Theme"
+                className="h-100"
+              /> */}
             </a>
           </div>
 
@@ -40,63 +43,12 @@ export default function Header({ logoURL, mobileLogoURL, altLogo }: any) {
           <div className="hidden sm:block sm:w-1/3"></div>
         </div>
         {/* Top bar */}
-        <div className="container mx-auto p-0">
-          <div className="container mx-auto">
-            <div className="flex justify-between sm:justify-end space-x-6">
-              <a
-                href="/game-page"
-                className="flex items-center space-x-1 text-red-500 hover:text-red-500"
-              >
-                <i
-                  className="fa fa-clock text-2xl mr-1"
-                  style={{ fontSize: "15px" }}
-                ></i>
-                <span
-                  className="uppercase font-semibold text-white"
-                  style={{ fontSize: "15px" }}
-                >
-                  Latest
-                </span>
-              </a>
-              <a
-                href="https://www.tiguandesign.com/gameleon/dark/most-popular-games/"
-                className="flex items-center space-x-1 text-red-500 hover:text-red-500"
-              >
-                <i
-                  className="fa fa-star text-2xl mr-1"
-                  style={{ fontSize: "15px" }}
-                ></i>
-                <span
-                  className="uppercase font-semibold text-white"
-                  style={{ fontSize: "15px" }}
-                >
-                  Popular
-                </span>
-              </a>
-              <a
-                href="https://www.tiguandesign.com/gameleon/dark/most-played-games/"
-                className="flex items-center space-x-1 text-red-500 hover:text-red-500"
-              >
-                <i
-                  className="fa fa-fire text-2xl mr-1"
-                  style={{ fontSize: "15px" }}
-                ></i>
-                <span
-                  className="uppercase font-semibold text-white"
-                  style={{ fontSize: "15px" }}
-                >
-                  Hot
-                </span>
-              </a>
-            </div>
-          </div>
-
-          {/* Navbar */}
-          <nav className=" shadow-sm container-fluid p-0">
-            <div className="mx-auto  flex justify-between items-center h-14">
+        <nav className=" shadow-sm container-fluid p-0">
+          <div className="container mx-auto p-0 bg-zinc-900">
+            <div className="mx-auto  flex justify-center items-center h-14">
               {/* Logo (optional) */}
               <div className="text-white font-bold text-lg sm:hidden">
-                <i className="fa fa-gamepad mr-2" /> GAMELON
+                <i className="fa fa-gamepad mr-2" /> Twino Game
               </div>
 
               {/* Hamburger for mobile */}
@@ -140,27 +92,8 @@ export default function Header({ logoURL, mobileLogoURL, altLogo }: any) {
                   <i className="fa fa-car-crash mr-1"></i>
                   <span className="uppercase font-semibold">Action</span>
                 </a>
-                <a
-                  href="/most-played-games"
-                  className="flex items-center text-white hover:text-red-500"
-                >
-                  <i className="fa fa-fire mr-1"></i>
-                  <span className="uppercase font-semibold">Most Played</span>
-                </a>
-                <a
-                  href="#"
-                  className="flex items-center text-white hover:text-red-500"
-                >
-                  <i className="fa fa-mobile-alt mr-1"></i>
-                  <span className="uppercase font-semibold">Game Format</span>
-                  <i className="fa fa-caret-down ml-1 text-xs"></i>
-                </a>
               </div>
 
-              {/* Search Icon */}
-              <div className="hidden sm:block text-white">
-                <i className="fas fa-search text-lg cursor-pointer hover:text-red-500"></i>
-              </div>
             </div>
 
             {/* Mobile Menu Dropdown */}
@@ -191,29 +124,12 @@ export default function Header({ logoURL, mobileLogoURL, altLogo }: any) {
                   >
                     ⚔️ Action
                   </a>
-                  <a
-                    href="/most-played-games"
-                    className="block text-lg font-semibold text-white transition duration-200"
-                  >
-                    🔥 Most Played
-                  </a>
-                  <a
-                    href="#"
-                    className="block text-lg font-semibold text-white transition duration-200"
-                  >
-                    🎲 Game Format
-                  </a>
-
-                  <div className="pt-4 border-t border-red-700 flex items-center gap-2 text-sm text-gray-300 hover:text-white transition duration-200">
-                    <i className="fas fa-search text-red-500" />
-                    <span>Search</span>
-                  </div>
                 </div>
               )}
             </div>
-          </nav>
-        </div>
+          </div>
+        </nav>
       </div>
-    </header>
+    </header >
   );
 }
