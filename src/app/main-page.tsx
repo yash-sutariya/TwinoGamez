@@ -11,128 +11,129 @@ import Link from "next/link";
 export default function Home() {
 
 
-  const highlights = [
-    {
-      title: "Brick Out",
-      image: "/game-logo-webp/27.webp",
-      link: "/game-page?gamename=brick-out",
-    },
-    {
-      title: "Duck Hunter",
-      image: "/game-logo-webp/28.webp",
-      link: "/game-page",
-    },
-    {
-      title: "Animal Crush",
-      image: "/game-logo-webp/29.webp",
-      link: "/game-page",
-    },
-    {
-      title: "Happy Chef Bubble Shooter",
-      image: "/game-logo-webp/30.webp",
-      link: "/game-page",
-    },
-    {
-      title: "Great Air Battles",
-      image: "/game-logo-webp/31.webp",
-      link: "/game-page",
-    },
-    {
-      title: "Plumber",
-      image: "/game-logo-webp/32.webp",
-      link: "/game-page",
-    },
-    {
-      title: "Professor Bubble",
-      image: "/game-logo-webp/33.webp",
-      link: "/game-page",
-    },
-    {
-      title: "Gold Miner Jack",
-      image: "/game-logo-webp/34.webp",
-      link: "/game-page",
-    },
-    {
-      title: "Tank War",
-      image: "/game-logo-webp/35.webp",
-      link: "/game-page",
-    },
-    {
-      title: "Stick Panda",
-      image: "/game-logo-webp/36.webp",
-      link: "/game-page",
-    },
-    {
-      title: "Stack Jump",
-      image: "/game-logo-webp/37.webp",
-      link: "/game-page",
-    },
-    {
-      title: "Crazy Runner",
-      image: "/game-logo-webp/38.webp",
-      link: "/game-page",
-    },
-    {
-      title: "Fashion Dress Up",
-      image: "/game-logo-webp/39.webp",
-      link: "/game-page",
-    },
-    {
-      title: "Super Cowboy Run",
-      image: "/game-logo-webp/40.webp",
-      link: "/game-page",
-    },
-    {
-      title: "Quick Dice",
-      image: "/game-logo-webp/41.webp",
-      link: "/game-page",
-    },
-    {
-      title: "Stick Soldier",
-      image: "/game-logo-webp/42.webp",
-      link: "/game-page",
-    },
-    {
-      title: "Monsters",
-      image: "/game-logo-webp/43.webp",
-      link: "/game-page",
-    },
-    {
-      title: "Flappy Ball",
-      image: "/game-logo-webp/44.webp",
-      link: "/game-page",
-    },
-    {
-      title: "Car Physics",
-      image: "/game-logo-webp/45.webp",
-      link: "/game-page",
-    },
-    {
-      title: "Girl Dress Up",
-      image: "/game-logo-webp/46.webp",
-      link: "/game-page",
-    },
-    {
-      title: "Viking Escape",
-      image: "/game-logo-webp/47.webp",
-      link: "/game-page",
-    },
-    {
-      title: "Pops Billiards",
-      image: "/game-logo-webp/48.webp",
-      link: "/game-page",
-    },
-    {
-      title: "Cars",
-      image: "/game-logo-webp/49.webp",
-      link: "/game-page",
-    },
-    {
-      title: "Tank",
-      image: "/game-logo-webp/50.webp",
-      link: "/game-page",
-    }
-  ];
+ const highlights = [
+  {
+    title: "Brick Out",
+    image: "/game-logo-webp/27.webp",
+    link: "/game-page?gamename=brick-out",
+  },
+  {
+    title: "Duck Hunter",
+    image: "/game-logo-webp/28.webp",
+    link: "/game-page?gamename=duck-hunter",
+  },
+  {
+    title: "Animal Crush",
+    image: "/game-logo-webp/29.webp",
+    link: "/game-page?gamename=animal-crush",
+  },
+  {
+    title: "Happy Chef Bubble Shooter",
+    image: "/game-logo-webp/30.webp",
+    link: "/game-page?gamename=happy-chef-bubble-shooter",
+  },
+  {
+    title: "Great Air Battles",
+    image: "/game-logo-webp/31.webp",
+    link: "/game-page?gamename=great-air-battles",
+  },
+  {
+    title: "Plumber",
+    image: "/game-logo-webp/32.webp",
+    link: "/game-page?gamename=plumber",
+  },
+  {
+    title: "Professor Bubble",
+    image: "/game-logo-webp/33.webp",
+    link: "/game-page?gamename=professor-bubble",
+  },
+  {
+    title: "Gold Miner Jack",
+    image: "/game-logo-webp/34.webp",
+    link: "/game-page?gamename=gold-miner-jack",
+  },
+  {
+    title: "Tank War",
+    image: "/game-logo-webp/35.webp",
+    link: "/game-page?gamename=tank-war",
+  },
+  {
+    title: "Stick Panda",
+    image: "/game-logo-webp/36.webp",
+    link: "/game-page?gamename=stick-panda",
+  },
+  {
+    title: "Stack Jump",
+    image: "/game-logo-webp/37.webp",
+    link: "/game-page?gamename=stack-jump",
+  },
+  {
+    title: "Crazy Runner",
+    image: "/game-logo-webp/38.webp",
+    link: "/game-page?gamename=crazy-runner",
+  },
+  {
+    title: "Fashion Dress Up",
+    image: "/game-logo-webp/39.webp",
+    link: "/game-page?gamename=fashion-dress-up",
+  },
+  {
+    title: "Super Cowboy Run",
+    image: "/game-logo-webp/40.webp",
+    link: "/game-page?gamename=super-cowboy-run",
+  },
+  {
+    title: "Quick Dice",
+    image: "/game-logo-webp/41.webp",
+    link: "/game-page?gamename=quick-dice",
+  },
+  {
+    title: "Stick Soldier",
+    image: "/game-logo-webp/42.webp",
+    link: "/game-page?gamename=stick-soldier",
+  },
+  {
+    title: "Monsters",
+    image: "/game-logo-webp/43.webp",
+    link: "/game-page?gamename=monsters",
+  },
+  {
+    title: "Flappy Ball",
+    image: "/game-logo-webp/44.webp",
+    link: "/game-page?gamename=flappy-ball",
+  },
+  {
+    title: "Car Physics",
+    image: "/game-logo-webp/45.webp",
+    link: "/game-page?gamename=car-physics",
+  },
+  {
+    title: "Girl Dress Up",
+    image: "/game-logo-webp/46.webp",
+    link: "/game-page?gamename=girl-dress-up",
+  },
+  {
+    title: "Viking Escape",
+    image: "/game-logo-webp/47.webp",
+    link: "/game-page?gamename=viking-escape",
+  },
+  {
+    title: "Pops Billiards",
+    image: "/game-logo-webp/48.webp",
+    link: "/game-page?gamename=pops-billiards",
+  },
+  {
+    title: "Cars",
+    image: "/game-logo-webp/49.webp",
+    link: "/game-page?gamename=cars",
+  },
+  {
+    title: "Tank",
+    image: "/game-logo-webp/50.webp",
+    link: "/game-page?gamename=tank",
+  },
+];
+
 
 
   const posts = [
