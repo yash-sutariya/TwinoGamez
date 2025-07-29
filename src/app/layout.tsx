@@ -17,7 +17,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <link rel="icon" type="image/png" href="/images/logos/gcs-logo-normal.png" sizes="any" />
+      <link
+        rel="icon"
+        type="image/png"
+        href="/images/games/twino-logo.png"
+        sizes="any"
+      />
       <body className={inter.className}>{children}</body>
     </html>
   );
