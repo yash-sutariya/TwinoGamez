@@ -1,8 +1,8 @@
 "use client";
+export const dynamic = "force-dynamic";
 import React, { useEffect, useRef, useState } from "react";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
-import Image from "next/image";
 
 // import "../../css/landing.css";
 import "../../css/bootstrap.css";
@@ -252,7 +252,7 @@ export default function GamePage() {
             <div className="flex flex-col justify-center sm:flex-row sm:justify-between sm:items-center gap-2 py-2  bg-black">
               <div className="flex justify-center items-center p-3">
                 <h1 className="text-lg sm:text-xl font-bold m-0">
-                  <span className="text-white mr-2 border-l-4 border-red-600 pl-2">Play {gameName?.toString().replace(/-/g, " ")} Game !</span>
+                  <span className="text-white mr-2 border-l-4 border-yellow pl-2">Play {gameName} Game !</span>
                 </h1>
               </div>
               <div className="flex justify-content-center gap-3">
@@ -299,7 +299,7 @@ export default function GamePage() {
               </h2>
               <button
                 onClick={handleCloseModal}
-                className="text-gray-400 hover:text-red-500"
+                className="text-gray-400 "
               >
                 <i className="fas fa-times text-xl"></i>
               </button>
@@ -325,12 +325,12 @@ export default function GamePage() {
             <div className="col-12">
               <div className="flex justify-between items-center mb-6 bg-black p-3">
                 <h1 className="text-lg sm:text-xl font-bold m-0">
-                  <span className="text-white mr-2 border-l-4 border-red-600 pl-2 ">Related Games</span>
+                  <span className="text-white mr-2 border-l-4 border-yellow pl-2 ">Related Games</span>
                 </h1>
               </div>
               <div className="row g-3">
-                {relatedGames.map((game, idx) => (
-                  <div className="col-12 col-sm-6 col-md-3 mb-4 cursor-pointer" key={idx}>
+                {relatedGames.map((game, index) => (
+                  <div key={`${game}-${index}`} className="col-12 col-sm-6 col-md-3 mb-4 cursor-pointer">
                     <Link href={game.link}>
                       <div className="game-card position-relative rounded overflow-hidden">
                         <img
