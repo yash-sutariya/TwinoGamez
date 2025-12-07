@@ -5,7 +5,7 @@ import GamePage from "./game-page";
 export const metadata: Metadata = {
   title: "TwinoGamez | Game Page",
   description:
-    "TwinoGamez is a WordPress arcade theme for online games, gaming, HTML5 games, magazine, newspaper, reviews or blogging site.",
+    "TwinoGamez is a WordPress Twino Gamez for online games, gaming, HTML5 games, magazine, newspaper, reviews or blogging site.",
 };
 
 export default function TwinoGamez() {

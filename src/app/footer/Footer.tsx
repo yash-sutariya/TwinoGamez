@@ -40,21 +40,23 @@ export default function Footer() {
   return (
     <footer>
       <div className="container-fluid  text-white ">
-        <div className="container background p-3 pt-5">
+        <div className="background p-3 pt-5">
           <div className="row">
             <div className="col-lg-4 mb-4">
-              <h1 className="fw-bold mb-3" style={{ fontSize: "2.5rem" }}>
-                <span className="text-danger">Twino</span>
-                <span className="text-white">Game</span>
-              </h1>
+              <img
+                src="/images/games/logo_gameleon3.png"
+                width="200"
+                alt="Twino Gamez"
+                title="Twino Gamez"
+              />
               <p className="text-muted">
-                TwinoGamez is a <strong>WordPress arcade theme</strong> for online
-                games, gaming, HTML5 games, magazine, newspaper, reviews or
-                blogging site.
+                TwinoGamez is a <strong>WordPress Twino Gamez</strong> for
+                online games, gaming, HTML5 games, magazine, newspaper, reviews
+                or blogging site.
               </p>
               <p className="text-muted">
                 You can have your own unique gaming site using our WordPress
-                Arcade Theme and impress your online players with this fully
+                Twino Gamez and impress your online players with this fully
                 functional WordPress Theme for Online Games.
               </p>
               <p className="text-muted">
@@ -64,7 +66,7 @@ export default function Footer() {
             </div>
 
             <div className="col-lg-4 mb-4">
-              <h1 className="text-lg sm:text-xl font-bold mb-6">
+              {/* <h1 className="text-lg sm:text-xl font-bold mb-6">
                 <span className="text-white mr-2 border-l-4 border-red-600 pl-2">
                   Recent Posts
                 </span>
@@ -81,10 +83,10 @@ export default function Footer() {
                     {post.plays} Plays
                   </div>
                 </div>
-              ))}
+              ))} */}
             </div>
             <div className="col-lg-4">
-              <div className="mb-4 rounded">
+              {/* <div className="mb-4 rounded">
                 <p className="mb-2 small">
                   Get the best games news into your inbox!
                 </p>
@@ -114,7 +116,7 @@ export default function Footer() {
                     {tag}
                   </span>
                 ))}
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
