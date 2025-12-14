@@ -21,19 +21,29 @@ export default function Footer() {
 
   const RecentPosts = [
     {
-      title: "New Battlefield Season Starts Soon",
-      date: "Feb 25, 2021",
-      plays: 4971,
+      title: "Home",
+      link: "/",
     },
     {
-      title: "Our Highest Review Scores of 2020",
-      date: "Feb 25, 2021",
-      plays: 4976,
+      title: "About Us",
+      link: "/about-us",
     },
     {
-      title: "This Game will Keep You up All Night",
-      date: "Feb 25, 2021",
-      plays: 4996,
+      title: "Privacy Policy",
+      link: "/privacy-policy",
+    },
+
+    {
+      title: "Terms & Conditions",
+      link: "/terms-conditions",
+    },
+    {
+      title: "For Developers",
+      link: "/for-developer",
+    },
+    {
+      title: "Contact Us",
+      link: "/contact-us",
     },
   ];
 
@@ -42,81 +52,48 @@ export default function Footer() {
       <div className="container-fluid  text-white ">
         <div className="background p-3 pt-5">
           <div className="row">
-            <div className="col-lg-4 mb-4">
+            <div className="col-lg-8 mb-4">
               <img
                 src="/images/games/logo_gameleon3.png"
                 width="200"
                 alt="Twino Gamez"
                 title="Twino Gamez"
               />
-              <p className="text-muted">
-                TwinoGamez is a <strong>WordPress Twino Gamez</strong> for
-                online games, gaming, HTML5 games, magazine, newspaper, reviews
-                or blogging site.
+              <p className="text-muted mt-3">
+                TwinoGamez is your destination for simple, fast, and free online
+                browser gaming. We offer a growing collection of lightweight
+                HTML5 games that work instantly on any device—mobile, tablet, or
+                desktop—without requiring downloads, sign-ups, or app installs.
               </p>
               <p className="text-muted">
-                You can have your own unique gaming site using our WordPress
-                Twino Gamez and impress your online players with this fully
-                functional WordPress Theme for Online Games.
+                Our platform is built to deliver a smooth, distraction-free
+                experience with no intrusive ads or forced pop-ups, ensuring
+                players of all ages can enjoy games safely and comfortably. All
+                gameplay is purely for entertainment, with no real-money
+                betting, gambling, or cash-out features.
               </p>
               <p className="text-muted">
-                Of course, you can use it for any other purpose: magazine, blog,
-                newspaper, editorial or review site.
+                At TwinoGamez, our mission is to make fun accessible to everyone
+                by providing a clean, user-friendly environment where gaming is
+                quick, easy, and always free. Whether you're relaxing, taking a
+                break, or looking for casual entertainment, TwinoGamez lets you
+                jump into the fun instantly—anytime, anywhere.
               </p>
             </div>
 
             <div className="col-lg-4 mb-4">
-              {/* <h1 className="text-lg sm:text-xl font-bold mb-6">
+              <h2 className="text-lg sm:text-xl font-bold mb-6">
                 <span className="text-white mr-2 border-l-4 border-red-600 pl-2">
-                  Recent Posts
+                  Links
                 </span>
-                <span className="text-danger fw-bold fst-italic ms-2">
-                  BEST
-                </span>
-              </h1>
+              </h2>
               {RecentPosts.map((post, index) => (
                 <div key={index} className="mb-4">
-                  <h6 className="text-white fw-bold mb-1">{post.title}</h6>
-                  <div className="text-danger small mb-1">{post.date}</div>
-                  <div className="text-muted small">
-                    <i className="fas fa-trophy me-1 text-muted"></i>
-                    {post.plays} Plays
-                  </div>
+                  <a href={post.link} className="text-white fw-bold mb-1">
+                    {post.title}
+                  </a>
                 </div>
-              ))} */}
-            </div>
-            <div className="col-lg-4">
-              {/* <div className="mb-4 rounded">
-                <p className="mb-2 small">
-                  Get the best games news into your inbox!
-                </p>
-                <div className="input-group">
-                  <input
-                    type="email"
-                    className="form-control border-0"
-                    placeholder="ENTER YOUR EMAIL"
-                    style={{ backgroundColor: "#fff" }}
-                  />
-                  <button className="btn btn-danger fw-bold px-3">
-                    Subscribe
-                  </button>
-                </div>
-              </div>
-
-              <h3 className="fw-bold mb-3">
-                <span className="text-danger me-2">|</span>
-                Tag Cloud
-              </h3>
-              <div className="d-flex flex-wrap gap-2">
-                {tags.map((tag, i) => (
-                  <span
-                    key={i}
-                    className="bg-dark text-white px-3 py-1 rounded small"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div> */}
+              ))}
             </div>
           </div>
         </div>

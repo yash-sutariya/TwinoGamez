@@ -121,14 +121,14 @@ export default function Home() {
       link: "/game-page?gamename=pops-billiards",
     },
     {
-      title: "Cars",
-      image: "/game-logo-webp/49.webp",
-      link: "/game-page?gamename=cars",
+      title: "Mummy Candies",
+      image: "/game-logo-webp/19.webp",
+      link: "/game-page?gamename=mummy-candies",
     },
     {
-      title: "Tank",
-      image: "/game-logo-webp/50.webp",
-      link: "/game-page?gamename=tank",
+      title: "Mad Fish",
+      image: "/game-logo-webp/20.webp",
+      link: "/game-page?gamename=mad-fish",
     },
   ];
 
@@ -255,16 +255,6 @@ export default function Home() {
       title: "Pool 8 Ball",
       image: "/game-logo-webp/18.webp",
       link: "/game-page?gamename=pool-8-ball",
-    },
-    {
-      title: "Mummy Candies",
-      image: "/game-logo-webp/19.webp",
-      link: "/game-page?gamename=mummy-candies",
-    },
-    {
-      title: "Mad Fish",
-      image: "/game-logo-webp/20.webp",
-      link: "/game-page?gamename=mad-fish",
     },
   ];
 
